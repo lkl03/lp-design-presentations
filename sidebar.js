@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var LOGO_SVG = '<svg width="22" height="30" viewBox="0 0 26 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-mark"><line x1="8" y1="3" x2="8" y2="33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 8 C8 8 21 8 21 17.5 C21 27 8 27 8 27" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var LOGO_SVG = '<img src="/lpfavicon.png" class="logo-mark-img" alt="Luxury Presence" width="30" height="30">';
 
   var PAGES = [
     {
