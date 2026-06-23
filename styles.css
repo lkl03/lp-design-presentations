@@ -1,19 +1,24 @@
 /* === VARIABLES === */
 :root {
-  --bg: #0D0C10;
-  --bg-sidebar: #0F0E13;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.05);
-  --border: rgba(201, 165, 116, 0.1);
-  --border-hover: rgba(201, 165, 116, 0.32);
-  --gold: #C9A574;
-  --gold-dim: rgba(201, 165, 116, 0.45);
-  --text-primary: #E8E3DB;
-  --text-secondary: #9A8070;
-  --text-muted: #5A5248;
+  --bg: #F9F8F6;
+  --bg-sidebar: #F2F1EE;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FDFCFB;
+  --border: rgba(28, 25, 22, 0.08);
+  --border-hover: rgba(138, 104, 48, 0.26);
+  --accent: #7A5828;
+  --accent-dim: rgba(138, 104, 48, 0.11);
+  --accent-border: rgba(138, 104, 48, 0.2);
+  --text-primary: #1A1714;
+  --text-secondary: #655A50;
+  --text-muted: #9D9086;
   --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --sidebar-width: 264px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --radius: 10px;
 }
 
 /* === RESET === */
@@ -51,13 +56,14 @@ body {
 }
 
 .sidebar-logo {
-  padding: 24px 20px 22px;
+  padding: 22px 20px 20px;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   gap: 11px;
   text-decoration: none;
   flex-shrink: 0;
+  color: var(--text-primary);
 }
 
 .logo-mark {
@@ -87,7 +93,7 @@ body {
 
 .sidebar-nav {
   flex: 1;
-  padding: 20px 12px;
+  padding: 18px 10px;
 }
 
 .nav-section-label {
@@ -104,40 +110,41 @@ body {
   align-items: center;
   gap: 9px;
   padding: 8px 10px;
-  border-radius: 6px;
+  border-radius: 7px;
   text-decoration: none;
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.01em;
-  transition: background 150ms var(--ease), color 150ms var(--ease);
+  transition: background 140ms var(--ease), color 140ms var(--ease);
   margin-bottom: 1px;
   line-height: 1;
 }
 
 .nav-link:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(28, 25, 22, 0.05);
 }
 
 .nav-link.active {
-  color: var(--gold);
-  background: rgba(201, 165, 116, 0.08);
+  color: var(--accent);
+  background: var(--accent-dim);
+  font-weight: 500;
 }
 
 .nav-link svg {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
-  opacity: 0.65;
-  transition: opacity 150ms;
+  opacity: 0.55;
+  transition: opacity 140ms;
 }
 
 .nav-link.active svg { opacity: 1; }
-.nav-link:hover svg { opacity: 0.9; }
+.nav-link:hover svg { opacity: 0.8; }
 
 .sidebar-footer {
-  padding: 12px;
+  padding: 10px 10px 14px;
   border-top: 1px solid var(--border);
   flex-shrink: 0;
 }
@@ -146,31 +153,31 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  padding: 10px 10px;
-  border-radius: 6px;
+  padding: 9px 10px;
+  border-radius: 7px;
   text-decoration: none;
   color: var(--text-muted);
   font-size: 11.5px;
   letter-spacing: 0.01em;
   line-height: 1.4;
-  transition: color 150ms var(--ease), background 150ms var(--ease), border-color 150ms var(--ease);
+  transition: color 140ms var(--ease), background 140ms var(--ease);
   border: 1px solid transparent;
 }
 
 .coda-link:hover {
-  color: var(--gold);
-  border-color: var(--border);
-  background: rgba(201, 165, 116, 0.05);
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: var(--accent-border);
 }
 
 .coda-link svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
   margin-top: 1px;
 }
 
-/* === MAIN CONTENT === */
+/* === MAIN === */
 .main {
   margin-left: var(--sidebar-width);
   flex: 1;
@@ -179,40 +186,41 @@ body {
 
 /* === HOME HEADER === */
 .home-header {
-  padding: 48px 48px 36px;
+  padding: 48px 52px 36px;
   border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
 }
 
 .home-eyebrow {
   font-size: 10.5px;
   letter-spacing: 0.14em;
-  color: var(--gold);
+  color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 14px;
   font-weight: 500;
 }
 
 .home-title {
-  font-size: 26px;
+  font-size: 25px;
   font-weight: 400;
   color: var(--text-primary);
   letter-spacing: -0.015em;
   line-height: 1.25;
-  max-width: 560px;
+  max-width: 540px;
 }
 
 .home-desc {
-  margin-top: 12px;
+  margin-top: 11px;
   font-size: 13.5px;
   color: var(--text-secondary);
-  max-width: 480px;
+  max-width: 460px;
   line-height: 1.65;
   font-weight: 300;
 }
 
-/* === CARDS GRID === */
+/* === CARDS === */
 .cards-section {
-  padding: 36px 48px 48px;
+  padding: 36px 52px 52px;
 }
 
 .cards-grid {
@@ -224,18 +232,19 @@ body {
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 26px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: background 180ms var(--ease), border-color 180ms var(--ease), transform 180ms var(--ease);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 180ms var(--ease), border-color 180ms var(--ease), transform 180ms var(--ease);
   position: relative;
 }
 
 .card:hover {
-  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-hover);
   border-color: var(--border-hover);
   transform: translateY(-1px);
 }
@@ -246,10 +255,10 @@ body {
 
 .card-number {
   font-size: 10.5px;
-  color: var(--gold-dim);
+  color: var(--accent);
   font-weight: 500;
   letter-spacing: 0.1em;
-  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
 }
 
 .card-icon {
@@ -258,12 +267,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .card-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
 }
 
 .card-body {
@@ -271,7 +280,7 @@ body {
 }
 
 .card-title {
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 500;
   color: var(--text-primary);
   letter-spacing: -0.01em;
@@ -287,8 +296,8 @@ body {
 }
 
 .card-arrow {
-  width: 26px;
-  height: 26px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border: 1px solid var(--border);
   display: flex;
@@ -301,44 +310,36 @@ body {
 }
 
 .card:hover .card-arrow {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: rgba(201, 165, 116, 0.08);
+  border-color: var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-dim);
 }
 
-/* 7th card spans full width */
+/* 7th card: full width */
 .card-wide {
   grid-column: 1 / -1;
   flex-direction: row;
   align-items: center;
-  gap: 28px;
-  padding: 28px 32px;
+  gap: 26px;
+  padding: 26px 30px;
 }
 
 .card-wide .card-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
 .card-wide .card-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
-.card-wide .card-body {
-  flex: 1;
-}
+.card-wide .card-body { flex: 1; }
+.card-wide .card-title { font-size: 18px; }
+.card-wide .card-arrow { align-self: center; }
 
-.card-wide .card-title {
-  font-size: 19px;
-}
-
-.card-wide .card-arrow {
-  align-self: center;
-}
-
-/* === GUIDE PAGE (iframe wrapper) === */
+/* === GUIDE IFRAME PAGE === */
 body.guide-page {
   overflow: hidden;
   height: 100vh;
@@ -377,9 +378,9 @@ body.guide-page .main {
   top: 14px;
   left: 14px;
   z-index: 200;
-  background: var(--bg-sidebar);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: 8px;
   width: 38px;
   height: 38px;
   cursor: pointer;
@@ -388,6 +389,7 @@ body.guide-page .main {
   flex-direction: column;
   gap: 4px;
   padding: 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .hamburger span {
@@ -403,7 +405,7 @@ body.guide-page .main {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(26, 23, 20, 0.3);
   z-index: 90;
   backdrop-filter: blur(2px);
 }

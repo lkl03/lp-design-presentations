@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var LOGO_SVG = '<svg width="22" height="30" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-mark"><line x1="7" y1="1" x2="7" y2="29" stroke="#E8E3DB" stroke-width="1.8" stroke-linecap="round"/><path d="M7 6 C7 6 19 6 19 14 C19 22 7 22 7 22" stroke="#E8E3DB" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>';
+  var LOGO_SVG = '<svg width="22" height="30" viewBox="0 0 26 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-mark"><line x1="8" y1="3" x2="8" y2="33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 8 C8 8 21 8 21 17.5 C21 27 8 27 8 27" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   var PAGES = [
     {
