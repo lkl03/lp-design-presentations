@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color in UI/UX Design — LP Design Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+
+    /* === THEME VARIABLES === */
+    :root {
+      --bg:            #0D0C10;
+      --bg-card:       rgba(255,255,255,0.04);
+      --text-primary:  #E8E3DB;
+      --text-secondary:#9A8070;
+      --text-muted:    #5A5248;
+      --gold:          #C9A574;
+      --gold-light:    #DFC096;
+      --gold-dim:      rgba(201,165,116,0.18);
+      --green:         #5A9E74;
+      --green-bg:      rgba(50,90,55,0.25);
+      --red:           #B85C5C;
+      --red-bg:        rgba(100,40,40,0.25);
+      --border:        rgba(201,165,116,0.12);
+      --border-strong: rgba(201,165,116,0.25);
+      --font-display:  'Cormorant', serif;
+      --font-body:     'IBM Plex Sans', sans-serif;
+      --ease-expo:     cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+
+      /* viewport-base sizes */
+      --title-size:    clamp(1.5rem, 5vw, 4rem);
+      --h2-size:       clamp(1.25rem, 3.5vw, 2.5rem);
+      --body-size:     clamp(0.75rem, 1.4vw, 1.05rem);
+      --small-size:    clamp(0.6rem, 0.9vw, 0.8rem);
+      --slide-padding: clamp(1rem, 4vw, 4rem);
+      --content-gap:   clamp(0.5rem, 2vw, 2rem);
+    }
+
+    /* === VIEWPORT BASE (mandatory full copy) === */
+    html, body { height: 100%; overflow-x: hidden; }
+    html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+    .slide {
+      width: 100vw; height: 100vh; height: 100dvh;
+      overflow: hidden; scroll-snap-align: start;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .slide-content {
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; max-height: 100%; overflow: hidden;
+      padding: var(--slide-padding);
+    }
+    img, .image-container { max-width: 100%; max-height: min(50vh, 400px); object-fit: contain; }
+    @media (max-height: 700px) {
+      :root { --slide-padding: clamp(0.75rem,3vw,2rem); --title-size: clamp(1.25rem,4.5vw,2.5rem); --h2-size: clamp(1rem,3vw,1.75rem); --body-size: clamp(0.65rem,1.1vw,0.9rem); }
+    }
+    @media (max-height: 600px) {
+      :root { --slide-padding: clamp(0.5rem,2.5vw,1.5rem); --body-size: clamp(0.6rem,1vw,0.82rem); }
+      .nav-dots, .decorative { display: none; }
+    }
+    @media (max-height: 500px) {
+      :root { --slide-padding: clamp(0.4rem,2vw,1rem); --title-size: clamp(1rem,3.5vw,1.5rem); }
+    }
+    @media (max-width: 600px) {
+      :root { --title-size: clamp(1.25rem,7vw,2.5rem); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* === RESET & BASE === */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text-primary); font-family: var(--font-body); }
+
+    /* === REVEAL SYSTEM === */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-expo), transform 0.7s var(--ease-expo);
+    }
+    .slide.visible .reveal { opacity: 1; transform: translateY(0); }
+    .slide.visible .reveal:nth-child(1) { transition-delay: 0.05s; }
+    .slide.visible .reveal:nth-child(2) { transition-delay: 0.15s; }
+    .slide.visible .reveal:nth-child(3) { transition-delay: 0.25s; }
+    .slide.visible .reveal:nth-child(4) { transition-delay: 0.35s; }
+    .slide.visible .reveal:nth-child(5) { transition-delay: 0.45s; }
+    .slide.visible .reveal:nth-child(6) { transition-delay: 0.55s; }
+    .stagger .reveal:nth-child(1) { transition-delay: 0.1s; }
+    .stagger .reveal:nth-child(2) { transition-delay: 0.2s; }
+    .stagger .reveal:nth-child(3) { transition-delay: 0.3s; }
+    .stagger .reveal:nth-child(4) { transition-delay: 0.4s; }
+    .stagger .reveal:nth-child(5) { transition-delay: 0.5s; }
+    .stagger .reveal:nth-child(6) { transition-delay: 0.6s; }
+
+    /* === ATMOSPHERIC ORBS === */
+    .orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(clamp(60px,12vw,140px));
+      pointer-events: none; z-index: 0;
+    }
+
+    /* === PROGRESS BAR === */
+    .progress-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 1px;
+      z-index: 100; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform-origin: left; transform: scaleX(0);
+      transition: transform 0.35s var(--ease-out);
+    }
+
+    /* === NAV DOTS === */
+    .nav-dots {
+      position: fixed; right: clamp(1rem,2.5vw,2.5rem); top: 50%;
+      transform: translateY(-50%); display: flex; flex-direction: column;
+      gap: clamp(0.4rem,0.8vh,0.7rem); z-index: 50;
+    }
+    .nav-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--text-muted); cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      border: none; padding: 0;
+    }
+    .nav-dot.active { background: var(--gold); transform: scale(1.5); }
+
+    /* === SHARED COMPONENTS === */
+    .eyebrow {
+      font-family: var(--font-body); font-size: var(--small-size);
+      font-weight: 400; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .gold-line {
+      width: clamp(36px,4.5vw,60px); height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: clamp(0.4rem,1.2vh,0.875rem) 0;
+    }
+    .h-display {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 9vw, 8.5rem);
+      font-weight: 600; font-style: italic; line-height: 0.93;
+      color: var(--text-primary);
+    }
+    .h-section {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 4vw, 3.5rem);
+      font-weight: 600; font-style: italic; line-height: 1.05;
+      color: var(--text-primary);
+    }
+    .lead {
+      font-family: var(--font-body); font-size: var(--body-size);
+      font-weight: 300; color: var(--text-secondary);
+      line-height: 1.65; max-width: 60ch;
+    }
+    .slide-header { display: flex; flex-direction: column; gap: 0; margin-bottom: clamp(0.75rem,2vh,2rem); }
+    .slide-num {
+      position: absolute; top: clamp(1.5rem,3vw,2.5rem); right: clamp(1.5rem,3vw,3.5rem);
+      font-family: var(--font-body); font-size: clamp(0.5rem,0.75vw,0.65rem);
+      letter-spacing: 0.2em; color: var(--text-muted); z-index: 2;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,2.5vw,2.5rem); align-items: start; }
+    @media (max-width:700px) { .two-col { grid-template-columns: 1fr; } }
+    .card-dark { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: clamp(0.875rem,2vw,1.5rem); }
+    .tag-do {
+      display: inline-flex; align-items: center; gap: 0.35em;
+      font-size: clamp(0.5rem,0.82vw,0.68rem); font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--green);
+      background: var(--green-bg); border: 1px solid rgba(90,158,116,0.3);
+      border-radius: 100px; padding: 0.2em 0.7em;
+    }
+    .tag-dont {
+      display: inline-flex; align-items: center; gap: 0.35em;
+      font-size: clamp(0.5rem,0.82vw,0.68rem); font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--red);
+      background: var(--red-bg); border: 1px solid rgba(184,92,92,0.3);
+      border-radius: 100px; padding: 0.2em 0.7em;
+    }
+    .divider-labeled { display: flex; align-items: center; gap: 1rem; margin: clamp(0.5rem,1.5vh,1rem) 0; }
+    .divider-labeled .line { flex: 1; height: 1px; background: var(--border-strong); }
+    .divider-labeled .text { font-size: var(--small-size); color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; white-space: nowrap; }
+
+    /* === SLIDE 1: TITLE === */
+    .slide-title { background: var(--bg); align-items: flex-start; }
+    .slide-title .slide-content { justify-content: center; padding-left: clamp(3rem,9vw,9rem); }
+    .title-orb-1 {
+      width: clamp(280px,52vw,650px); height: clamp(280px,52vw,650px);
+      background: radial-gradient(circle,rgba(55,30,15,0.85) 0%,transparent 65%);
+      top: -15%; right: -8%;
+    }
+    .title-orb-2 {
+      width: clamp(180px,32vw,420px); height: clamp(180px,32vw,420px);
+      background: radial-gradient(circle,rgba(20,30,18,0.7) 0%,transparent 65%);
+      bottom: -10%; left: -4%;
+    }
+    .title-orb-3 {
+      width: clamp(100px,18vw,240px); height: clamp(100px,18vw,240px);
+      background: radial-gradient(circle,rgba(201,165,116,0.13) 0%,transparent 65%);
+      top: 22%; right: 20%;
+    }
+    .title-swatches { display: flex; gap: clamp(0.45rem,1vw,0.85rem); margin-top: clamp(1.25rem,3.5vh,3rem); }
+    .title-swatch { width: clamp(18px,1.8vw,28px); height: clamp(18px,1.8vw,28px); border-radius: 50%; }
+    .title-h1-serif-light { font-weight: 400; color: var(--text-secondary); }
+
+    /* === SLIDE 2: WHY COLOR MATTERS === */
+    .why-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.625rem,1.5vw,1.25rem); }
+    @media (max-width:700px) { .why-cards { grid-template-columns: 1fr; } }
+    .why-card { background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--gold); border-radius: 10px; padding: clamp(0.75rem,1.8vw,1.375rem); }
+    .why-num { font-family: var(--font-display); font-size: clamp(1.6rem,3vw,2.5rem); font-weight: 600; font-style: italic; color: var(--gold); opacity: 0.65; line-height: 1; margin-bottom: clamp(0.3rem,0.8vh,0.6rem); }
+    .why-title { font-family: var(--font-display); font-size: clamp(0.9rem,1.8vw,1.4rem); font-weight: 600; font-style: italic; color: var(--text-primary); line-height: 1.2; margin-bottom: clamp(0.3rem,0.7vh,0.5rem); }
+    .why-text { font-size: clamp(0.62rem,0.95vw,0.8rem); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
+
+    /* === SLIDE 3: THREE TIERS === */
+    .tier-list { display: flex; flex-direction: column; gap: clamp(0.625rem,1.8vh,1.375rem); }
+    .tier-item { display: grid; grid-template-columns: clamp(110px,17vw,210px) 1fr; gap: clamp(0.875rem,2vw,2rem); align-items: center; }
+    .tier-bar-label { font-size: clamp(0.55rem,0.82vw,0.68rem); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .tier-bar-track { height: clamp(5px,0.9vh,9px); background: rgba(255,255,255,0.06); border-radius: 100px; overflow: hidden; }
+    .tier-bar-fill { height: 100%; border-radius: 100px; }
+    .tier-bar-pct { font-size: clamp(0.55rem,0.8vw,0.65rem); color: var(--text-muted); margin-top: 0.25rem; }
+    .tier-name { font-family: var(--font-display); font-size: clamp(0.95rem,1.9vw,1.55rem); font-weight: 600; font-style: italic; color: var(--text-primary); line-height: 1.2; }
+    .tier-desc { font-size: clamp(0.62rem,0.95vw,0.8rem); font-weight: 300; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.45; }
+
+    /* === SLIDE 4: DO BRAND COLOR === */
+    .rule-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.45rem,1.1vh,0.875rem); }
+    .rule-list li { display: flex; gap: 0.6rem; align-items: flex-start; }
+    .rule-list li::before { content: '—'; color: var(--gold); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
+    .rule-list li span { font-size: var(--body-size); font-weight: 300; color: var(--text-secondary); line-height: 1.5; }
+    .mockup-block { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: clamp(0.875rem,2.2vw,1.875rem); display: flex; flex-direction: column; gap: clamp(0.5rem,1.2vh,0.875rem); }
+    .mockup-bar { height: clamp(5px,0.85vh,8px); border-radius: 4px; background: rgba(255,255,255,0.07); }
+    .w-full { width: 100%; } .w-3q { width: 75%; } .w-half { width: 50%; }
+    .mockup-cta { background: var(--gold); color: #1A1510; font-size: clamp(0.55rem,0.85vw,0.7rem); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 100px; padding: 0.5em 1.2em; width: fit-content; margin-top: 0.2rem; }
+    .mockup-label { font-size: clamp(0.48rem,0.7vw,0.58rem); color: var(--text-muted); letter-spacing: 0.14em; text-transform: uppercase; text-align: center; margin-top: 0.4rem; }
+
+    /* === SLIDE 5: NEUTRAL BACKGROUNDS === */
+    .swatch-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(0.5rem,1.5vw,1.25rem); }
+    @media (max-width:600px) { .swatch-grid { grid-template-columns: repeat(2,1fr); } }
+    .swatch-item { display: flex; flex-direction: column; align-items: center; gap: clamp(0.3rem,0.7vh,0.55rem); }
+    .swatch-circle { width: clamp(44px,6.5vw,76px); height: clamp(44px,6.5vw,76px); border-radius: 50%; }
+    .swatch-name { font-size: clamp(0.58rem,0.88vw,0.72rem); font-weight: 500; color: var(--text-primary); text-align: center; }
+    .swatch-hex { font-size: clamp(0.52rem,0.72vw,0.6rem); color: var(--text-muted); font-style: italic; }
+    .swatch-use { font-size: clamp(0.48rem,0.68vw,0.58rem); color: var(--text-muted); text-align: center; line-height: 1.4; }
+
+    /* === SLIDE 6: RESERVE SATURATION === */
+    .usecase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.45rem,1.1vw,0.9rem); }
+    @media (max-width:700px) { .usecase-grid { grid-template-columns: repeat(2,1fr); } }
+    .usecase-card { background: var(--bg-card); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 8px; padding: clamp(0.55rem,1.3vw,0.95rem); }
+    .usecase-title { font-family: var(--font-display); font-size: clamp(0.8rem,1.4vw,1.15rem); font-weight: 600; font-style: italic; color: var(--text-primary); margin-bottom: 0.2em; }
+    .usecase-sub { font-size: clamp(0.55rem,0.8vw,0.68rem); font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
+
+    /* === SLIDE 7: CONTRAST === */
+    .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.625rem,1.8vw,1.625rem); }
+    @media (max-width:600px) { .contrast-grid { grid-template-columns: 1fr; } }
+    .contrast-panel { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .contrast-demo { padding: clamp(0.75rem,1.8vw,1.375rem); display: flex; flex-direction: column; gap: 0.45rem; }
+    .demo-heading { font-family: var(--font-display); font-size: clamp(0.95rem,1.7vw,1.35rem); font-weight: 600; font-style: italic; }
+    .demo-text { font-size: clamp(0.6rem,0.95vw,0.78rem); font-weight: 400; line-height: 1.5; }
+    .contrast-footer { padding: clamp(0.35rem,0.9vh,0.6rem) clamp(0.75rem,1.8vw,1.375rem); border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; }
+    .contrast-label { font-size: clamp(0.5rem,0.75vw,0.62rem); letter-spacing: 0.1em; text-transform: uppercase; }
+    .contrast-ratio { font-family: var(--font-display); font-size: clamp(0.7rem,1.1vw,0.9rem); font-weight: 600; font-style: italic; color: var(--green); }
+
+    /* === SLIDE 8: DON'T SATURATED === */
+    .fullbleed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.625rem,1.8vw,1.625rem); }
+    .fullbleed-bad { border-radius: 10px; overflow: hidden; border: 1px solid rgba(184,92,92,0.3); }
+    .fb-preview { height: clamp(70px,13vh,120px); display: flex; align-items: center; justify-content: center; }
+    .fb-label { font-size: clamp(0.55rem,0.82vw,0.68rem); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55; }
+    .fb-meta { padding: clamp(0.45rem,1vw,0.8rem); background: rgba(255,255,255,0.025); }
+    .fb-verdict { display: flex; gap: 0.45rem; align-items: flex-start; font-size: clamp(0.58rem,0.9vw,0.75rem); font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
+
+    /* === SLIDE 9: 10-15% RULE === */
+    .percent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.875rem,2.2vw,2.25rem); }
+    @media (max-width:600px) { .percent-grid { grid-template-columns: 1fr; } }
+    .percent-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .percent-card.wrong { border-color: rgba(184,92,92,0.3); }
+    .percent-card.right { border-color: rgba(90,158,116,0.3); }
+    .percent-visual { height: clamp(65px,12vh,105px); position: relative; background: #161418; }
+    .percent-fill { position: absolute; left: 0; top: 0; bottom: 0; }
+    .percent-info { padding: clamp(0.55rem,1.3vw,1rem); }
+    .percent-num { font-family: var(--font-display); font-size: clamp(1.4rem,2.8vw,2.3rem); font-weight: 600; font-style: italic; line-height: 1; }
+    .percent-caption { font-size: clamp(0.58rem,0.88vw,0.72rem); font-weight: 300; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.4; }
+
+    /* === SLIDE 10: MAX 2 ACCENTS === */
+    .palette-compare { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.875rem,2.2vw,2.25rem); }
+    @media (max-width:600px) { .palette-compare { grid-template-columns: 1fr; } }
+    .palette-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: clamp(0.75rem,1.8vw,1.5rem); }
+    .palette-card.wrong { border-color: rgba(184,92,92,0.3); }
+    .palette-card.right { border-color: rgba(90,158,116,0.3); }
+    .palette-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: clamp(0.5rem,1.2vh,0.875rem); }
+    .palette-dots { display: flex; gap: clamp(0.35rem,0.8vw,0.6rem); flex-wrap: wrap; }
+    .palette-dot { width: clamp(18px,2vw,30px); height: clamp(18px,2vw,30px); border-radius: 50%; }
+    .palette-desc { font-size: clamp(0.6rem,0.92vw,0.78rem); font-weight: 300; color: var(--text-secondary); line-height: 1.5; }
+    .palette-note { font-size: clamp(0.55rem,0.8vw,0.65rem); color: var(--text-muted); font-style: italic; margin-top: 0.4rem; }
+
+    /* === SLIDE 11: COMPLIANCE === */
+    .compliance-list { display: flex; flex-direction: column; gap: clamp(0.4rem,1vh,0.875rem); }
+    .compliance-row { display: grid; grid-template-columns: clamp(90px,14vw,170px) 1fr auto; gap: clamp(0.625rem,1.8vw,1.5rem); align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: clamp(0.55rem,1.3vw,1rem) clamp(0.75rem,1.8vw,1.375rem); }
+    .comp-brand { font-family: var(--font-display); font-size: clamp(0.85rem,1.5vw,1.25rem); font-weight: 600; font-style: italic; color: var(--text-primary); }
+    .comp-rule { font-size: clamp(0.6rem,0.92vw,0.78rem); font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
+    .comp-badge { font-size: clamp(0.48rem,0.72vw,0.6rem); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 100px; padding: 0.25em 0.75em; white-space: nowrap; }
+    .badge-strict   { background: rgba(184,92,92,0.2);   color: #D48080; border: 1px solid rgba(184,92,92,0.3);   }
+    .badge-moderate { background: rgba(201,165,116,0.15); color: var(--gold); border: 1px solid rgba(201,165,116,0.3); }
+    .badge-flexible { background: rgba(90,158,116,0.15);  color: var(--green); border: 1px solid rgba(90,158,116,0.3);  }
+
+    /* === SLIDE 12: QUICK REFERENCE === */
+    .slide-closing { background: #0A090D; }
+    .closing-orb-1 {
+      width: clamp(200px,38vw,480px); height: clamp(200px,38vw,480px);
+      background: radial-gradient(circle,rgba(55,30,10,0.6) 0%,transparent 65%);
+      bottom: -15%; right: -8%;
+    }
+    .closing-orb-2 {
+      width: clamp(140px,24vw,310px); height: clamp(140px,24vw,310px);
+      background: radial-gradient(circle,rgba(20,38,28,0.5) 0%,transparent 65%);
+      top: -10%; left: 8%;
+    }
+    .quick-ref { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,3vw,3rem); }
+    @media (max-width:600px) { .quick-ref { grid-template-columns: 1fr; } }
+    .qr-label { font-size: clamp(0.55rem,0.82vw,0.68rem); font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: clamp(0.4rem,1vh,0.75rem); }
+    .qr-label.green { color: var(--green); }
+    .qr-label.red { color: var(--red); }
+    .qr-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.3rem,0.75vh,0.55rem); }
+    .qr-list li { display: flex; gap: 0.55rem; align-items: flex-start; }
+    .qr-icon { font-size: clamp(0.55rem,0.82vw,0.68rem); flex-shrink: 0; margin-top: 0.1em; }
+    .qr-list li span { font-size: clamp(0.6rem,0.92vw,0.78rem); font-weight: 300; color: var(--text-secondary); line-height: 1.45; }
+
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+  <nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 1 — TITLE
+  ═══════════════════════════════════════════ -->
+  <section class="slide slide-title">
+    <div class="orb title-orb-1" aria-hidden="true"></div>
+    <div class="orb title-orb-2" aria-hidden="true"></div>
+    <div class="orb title-orb-3" aria-hidden="true"></div>
+    <div class="slide-content">
+      <span class="eyebrow reveal">Luxury Presence · Design Principles Development Hub</span>
+      <div class="gold-line reveal"></div>
+      <h1 class="h-display reveal">
+        Color in<br>
+        <span class="title-h1-serif-light">UI/UX</span><br>
+        Design
+      </h1>
+      <p class="lead reveal" style="margin-top:clamp(1rem,2.5vh,2rem);">A Field Guide for the LP Website Builders</p>
+      <div class="title-swatches reveal">
+        <div class="title-swatch" style="background:#0D0C10;outline:1px solid rgba(201,165,116,0.3);" title="Midnight"></div>
+        <div class="title-swatch" style="background:#3D2B1F;" title="Espresso"></div>
+        <div class="title-swatch" style="background:#C9A574;" title="Gold"></div>
+        <div class="title-swatch" style="background:#9A8070;" title="Warm ash"></div>
+        <div class="title-swatch" style="background:#E8E3DB;" title="Cream"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 2 — WHY COLOR MATTERS
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">01 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal">Foundation</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Why Color Matters</h2>
+      </div>
+      <div class="why-cards stagger">
+        <div class="why-card reveal">
+          <div class="why-num">01</div>
+          <div class="why-title">Trust &amp; Authority</div>
+          <p class="why-text">Color choices signal professionalism before a single word is read. Inconsistent palettes erode buyer confidence instantly.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">02</div>
+          <div class="why-title">Brand Recognition</div>
+          <p class="why-text">Consistent color increases brand recall by up to 80%. Luxury brokerages live and die on this — every pixel is brand.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">03</div>
+          <div class="why-title">User Experience</div>
+          <p class="why-text">Color guides attention, creates hierarchy, and drives conversion. The wrong accent color on a CTA costs real leads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 3 — THREE TIERS
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">02 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal">System</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">The Color Tier System</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">Every LP site palette follows this three-tier architecture — no exceptions.</p>
+      </div>
+      <div class="tier-list stagger">
+        <div class="tier-item reveal">
+          <div>
+            <div class="tier-bar-label">Foundation</div>
+            <div class="tier-bar-track"><div class="tier-bar-fill" style="width:65%;background:linear-gradient(90deg,#C9A574,#DFC096);"></div></div>
+            <div class="tier-bar-pct">60 – 70%</div>
+          </div>
+          <div>
+            <div class="tier-name">Brand Neutrals</div>
+            <div class="tier-desc">Navy, white, charcoal, cream — the dominant visual mass of every page</div>
+          </div>
+        </div>
+        <div class="tier-item reveal">
+          <div>
+            <div class="tier-bar-label">Support</div>
+            <div class="tier-bar-track"><div class="tier-bar-fill" style="width:25%;background:linear-gradient(90deg,#7A8FA0,#A0B4C4);"></div></div>
+            <div class="tier-bar-pct">20 – 30%</div>
+          </div>
+          <div>
+            <div class="tier-name">Secondary Tones</div>
+            <div class="tier-desc">Warm grays, soft blues, mid-tones — supporting texture without competing</div>
+          </div>
+        </div>
+        <div class="tier-item reveal">
+          <div>
+            <div class="tier-bar-label">Accent</div>
+            <div class="tier-bar-track"><div class="tier-bar-fill" style="width:12%;background:linear-gradient(90deg,#D45A30,#E07050);"></div></div>
+            <div class="tier-bar-pct">10 – 15%</div>
+          </div>
+          <div>
+            <div class="tier-name">Active / Highlight</div>
+            <div class="tier-desc">One bold brand color — used only for CTAs, active states, and key UI moments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 4 — DO: BRAND COLOR WITH INTENT
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">03 / 11</span>
+    <div class="slide-content">
+      <div class="two-col">
+        <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.2vh,0.875rem);">
+          <div class="slide-header" style="margin-bottom:0;">
+            <span class="eyebrow reveal">Do</span>
+            <div class="gold-line reveal"></div>
+            <h2 class="h-section reveal">Use Brand Color<br>with Intent</h2>
+          </div>
+          <ul class="rule-list stagger" style="margin-top:clamp(0.3rem,0.8vh,0.625rem);">
+            <li class="reveal"><span>Apply accent color to primary CTAs, active nav states, and key UI moments only</span></li>
+            <li class="reveal"><span>Keep accent coverage under 15% of total visible page real estate</span></li>
+            <li class="reveal"><span>Let neutral backgrounds do the heavy lifting — they make the accent pop</span></li>
+            <li class="reveal"><span>One bold color per page; grays and whites are structural, not accents</span></li>
+          </ul>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="mockup-block">
+            <div class="mockup-bar w-3q"></div>
+            <div class="mockup-bar w-full"></div>
+            <div class="mockup-bar w-half"></div>
+            <div class="mockup-cta">Schedule a Showing →</div>
+          </div>
+          <p class="mockup-label">Accent on CTA only · everything else neutral</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 5 — DO: NEUTRAL BACKGROUNDS
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">04 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal">Do</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Lead with Neutral Backgrounds</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">Every LP page background should be one of these four. Never a saturated color.</p>
+      </div>
+      <div class="swatch-grid stagger">
+        <div class="swatch-item reveal">
+          <div class="swatch-circle" style="background:#FFFFFF;outline:1px solid rgba(201,165,116,0.25);"></div>
+          <span class="swatch-name">Pure White</span>
+          <span class="swatch-hex">#FFFFFF</span>
+          <span class="swatch-use">Hero, cards, main content</span>
+        </div>
+        <div class="swatch-item reveal">
+          <div class="swatch-circle" style="background:#F8F6F2;outline:1px solid rgba(201,165,116,0.2);"></div>
+          <span class="swatch-name">Warm Off-White</span>
+          <span class="swatch-hex">#F8F6F2</span>
+          <span class="swatch-use">Section fills, alternating rows</span>
+        </div>
+        <div class="swatch-item reveal">
+          <div class="swatch-circle" style="background:#EDEDEC;outline:1px solid rgba(201,165,116,0.18);"></div>
+          <span class="swatch-name">Light Gray</span>
+          <span class="swatch-hex">#EDEDEC</span>
+          <span class="swatch-use">Dividers, input backgrounds</span>
+        </div>
+        <div class="swatch-item reveal">
+          <div class="swatch-circle" style="background:#1A1C22;outline:1px solid rgba(201,165,116,0.2);"></div>
+          <span class="swatch-name">Near-Black</span>
+          <span class="swatch-hex">#1A1C22</span>
+          <span class="swatch-use">Footer, dark sections, overlays</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 6 — DO: RESERVE SATURATION
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">05 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal">Do</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Reserve Saturation for Impact</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">High-saturation color earns attention. Spend it only on elements that need to convert.</p>
+      </div>
+      <div class="usecase-grid stagger">
+        <div class="usecase-card reveal">
+          <div class="usecase-title">Primary Buttons</div>
+          <div class="usecase-sub">CTAs that trigger the next conversion step</div>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-title">Form Focus States</div>
+          <div class="usecase-sub">Active input borders and selection highlights</div>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-title">Prices &amp; Stats</div>
+          <div class="usecase-sub">Listing prices, key metrics, social proof numbers</div>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-title">Active Nav Items</div>
+          <div class="usecase-sub">Current page indicator in navigation</div>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-title">Alert States</div>
+          <div class="usecase-sub">Error messages, availability flags, urgency signals</div>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-title">Key Badges</div>
+          <div class="usecase-sub">New listing, featured, sold — high-signal labels only</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 7 — DO: CONTRAST
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">06 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal">Do</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Maintain WCAG-Grade Contrast</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">WCAG AA minimum: 4.5:1 for body text · 3:1 for large text and UI components</p>
+      </div>
+      <div class="contrast-grid stagger">
+        <div class="contrast-panel reveal">
+          <div class="contrast-demo" style="background:#FFFFFF;">
+            <span class="demo-heading" style="color:#1A1C22;">Dark on Light</span>
+            <span class="demo-text" style="color:#3A3C42;">Property details, descriptions, and all body copy must use near-black on white or off-white backgrounds.</span>
+          </div>
+          <div class="contrast-footer" style="background:#F4F2EE;">
+            <span class="contrast-label" style="color:#666;">Charcoal on White</span>
+            <span class="contrast-ratio">12.6:1 ✓</span>
+          </div>
+        </div>
+        <div class="contrast-panel reveal">
+          <div class="contrast-demo" style="background:#1A1C22;">
+            <span class="demo-heading" style="color:#F8F6F2;">Light on Dark</span>
+            <span class="demo-text" style="color:#C8C4BE;">Footer text, dark hero overlays, and modal backgrounds require near-white on near-black.</span>
+          </div>
+          <div class="contrast-footer" style="background:#141618;">
+            <span class="contrast-label" style="color:#6A6660;">Cream on Near-Black</span>
+            <span class="contrast-ratio">9.4:1 ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 8 — DON'T: SATURATED FULL-BLEED
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">07 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal" style="color:var(--red);">Don't</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Avoid Saturated Full-Bleed Sections</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">Bold colors as section fills overwhelm content and destroy luxury perception.</p>
+      </div>
+      <div class="fullbleed-grid stagger">
+        <div class="fullbleed-bad reveal">
+          <div class="fb-preview" style="background:#1B4FD8;"><span class="fb-label" style="color:rgba(255,255,255,0.6);">Section background</span></div>
+          <div class="fb-meta">
+            <div class="fb-verdict"><span style="color:var(--red);flex-shrink:0;">✗</span><span>Electric blue full-bleed — dominates, fights content, kills brand tone</span></div>
+          </div>
+        </div>
+        <div class="fullbleed-bad reveal">
+          <div class="fb-preview" style="background:#B03A2E;"><span class="fb-label" style="color:rgba(255,255,255,0.6);">Section background</span></div>
+          <div class="fb-meta">
+            <div class="fb-verdict"><span style="color:var(--red);flex-shrink:0;">✗</span><span>Saturated red fill — jarring, low contrast for text, aggressive</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="divider-labeled reveal">
+        <div class="line"></div><span class="text">Use instead</span><div class="line"></div>
+      </div>
+      <p class="lead reveal" style="text-align:center;max-width:none;font-size:var(--small-size);">
+        Neutral bg (#F8F6F2 or #1A1C22) · accent color only for a single CTA or element within the section
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 9 — DON'T: 10-15% RULE
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">08 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal" style="color:var(--red);">Don't</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">The 10–15% Accent Rule</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">Your brand accent should cover no more than 10–15% of the visible page at any scroll position.</p>
+      </div>
+      <div class="percent-grid stagger">
+        <div class="percent-card wrong reveal">
+          <div class="percent-visual"><div class="percent-fill" style="width:55%;background:#D45A30;"></div></div>
+          <div class="percent-info">
+            <div class="percent-num" style="color:var(--red);">55%</div>
+            <div class="percent-caption">Way too much — accent fights neutral for dominance and loses</div>
+          </div>
+        </div>
+        <div class="percent-card right reveal">
+          <div class="percent-visual"><div class="percent-fill" style="width:11%;background:#C9A574;"></div></div>
+          <div class="percent-info">
+            <div class="percent-num" style="color:var(--green);">11%</div>
+            <div class="percent-caption">Just right — accent pops because it's surrounded by negative space</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 10 — DON'T: MAX 2 ACCENTS
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">09 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal" style="color:var(--red);">Don't</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Max 2 Accent Colors</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">More than two distinct accent hues fragment visual hierarchy and dilute brand identity.</p>
+      </div>
+      <div class="palette-compare stagger">
+        <div class="palette-card wrong reveal">
+          <div class="palette-header"><span class="tag-dont">✗ Don't</span></div>
+          <div class="palette-dots" style="margin-bottom:clamp(0.4rem,1vh,0.75rem);">
+            <div class="palette-dot" style="background:#1B4FD8;"></div>
+            <div class="palette-dot" style="background:#D45A30;"></div>
+            <div class="palette-dot" style="background:#2E8B57;"></div>
+            <div class="palette-dot" style="background:#A855F7;"></div>
+            <div class="palette-dot" style="background:#F59E0B;"></div>
+          </div>
+          <p class="palette-desc">5 accents on one page — competing CTAs, no hierarchy, nowhere for the eye to settle</p>
+        </div>
+        <div class="palette-card right reveal">
+          <div class="palette-header"><span class="tag-do">✓ Do</span></div>
+          <div class="palette-dots" style="margin-bottom:clamp(0.4rem,1vh,0.75rem);">
+            <div class="palette-dot" style="background:#C9A574;"></div>
+            <div class="palette-dot" style="background:#EEEBDF;outline:1px solid rgba(201,165,116,0.3);"></div>
+            <div class="palette-dot" style="background:#3A3C42;"></div>
+          </div>
+          <p class="palette-desc">1 accent + neutrals — clear hierarchy, the gold CTA draws the eye every time</p>
+          <p class="palette-note">Grays, whites, and blacks are structural — they don't count toward the accent limit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 11 — BROKERAGE COMPLIANCE
+  ═══════════════════════════════════════════ -->
+  <section class="slide">
+    <span class="slide-num">10 / 11</span>
+    <div class="slide-content">
+      <div class="slide-header">
+        <span class="eyebrow reveal">Compliance</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Brokerage Color Compliance</h2>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.6vh,0.5rem);">Some clients have mandated palettes. Understand the constraint before you design a single pixel.</p>
+      </div>
+      <div class="compliance-list stagger">
+        <div class="compliance-row reveal">
+          <span class="comp-brand">Compass</span>
+          <span class="comp-rule">Strictly monochrome — black, white, and grays only. No brand accent colors permitted anywhere on the site.</span>
+          <span class="comp-badge badge-strict">Strict</span>
+        </div>
+        <div class="compliance-row reveal">
+          <span class="comp-brand">Sotheby's</span>
+          <span class="comp-rule">Mandated brand palette — deep navy (#002244) as primary, specific warm accents. No substitutions.</span>
+          <span class="comp-badge badge-strict">Strict</span>
+        </div>
+        <div class="compliance-row reveal">
+          <span class="comp-brand">Douglas Elliman</span>
+          <span class="comp-rule">Navy primary, defined secondary palette. Bold deviations require brand approval — treat as strict.</span>
+          <span class="comp-badge badge-moderate">Moderate</span>
+        </div>
+        <div class="compliance-row reveal">
+          <span class="comp-brand">Independent</span>
+          <span class="comp-rule">Typically flexible — follow the agent's brand kit or LP's default palette recommendations.</span>
+          <span class="comp-badge badge-flexible">Flexible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 12 — QUICK REFERENCE
+  ═══════════════════════════════════════════ -->
+  <section class="slide slide-closing">
+    <div class="orb closing-orb-1" aria-hidden="true"></div>
+    <div class="orb closing-orb-2" aria-hidden="true"></div>
+    <span class="slide-num" style="color:var(--text-muted);">11 / 11</span>
+    <div class="slide-content" style="position:relative;z-index:1;">
+      <div class="slide-header">
+        <span class="eyebrow reveal">Quick Reference</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="h-section reveal">Color Rules at a Glance</h2>
+      </div>
+      <div class="quick-ref stagger">
+        <div class="reveal">
+          <div class="qr-label green">✓ Do</div>
+          <ul class="qr-list">
+            <li><span class="qr-icon" style="color:var(--green);">✓</span><span>Use brand accent for CTAs and active states only</span></li>
+            <li><span class="qr-icon" style="color:var(--green);">✓</span><span>Lead with neutral backgrounds — white, off-white, near-black</span></li>
+            <li><span class="qr-icon" style="color:var(--green);">✓</span><span>Reserve saturation for high-conversion UI moments</span></li>
+            <li><span class="qr-icon" style="color:var(--green);">✓</span><span>Maintain 4.5:1 contrast ratio (WCAG AA minimum)</span></li>
+            <li><span class="qr-icon" style="color:var(--green);">✓</span><span>Keep accent coverage under 10–15% of the page</span></li>
+            <li><span class="qr-icon" style="color:var(--green);">✓</span><span>Always check brokerage compliance before designing</span></li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="qr-label red">✗ Don't</div>
+          <ul class="qr-list">
+            <li><span class="qr-icon" style="color:var(--red);">✗</span><span>Use saturated colors as section or hero backgrounds</span></li>
+            <li><span class="qr-icon" style="color:var(--red);">✗</span><span>Exceed 15% accent coverage on any viewport</span></li>
+            <li><span class="qr-icon" style="color:var(--red);">✗</span><span>Use more than 2 distinct accent hues on one page</span></li>
+            <li><span class="qr-icon" style="color:var(--red);">✗</span><span>Place similar tones side by side without contrast</span></li>
+            <li><span class="qr-icon" style="color:var(--red);">✗</span><span>Override mandated brokerage color guidelines</span></li>
+            <li><span class="qr-icon" style="color:var(--red);">✗</span><span>Use light gray text on white or dark gray on black</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* === SLIDE PRESENTATION CONTROLLER === */
+    class SlidePresentation {
+      constructor() {
+        this.slides      = Array.from(document.querySelectorAll('.slide'));
+        this.total       = this.slides.length;
+        this.current     = 0;
+        this.isScrolling = false;
+        this.bar         = document.getElementById('progressBar');
+        this.dotsEl      = document.getElementById('navDots');
+
+        this.setupObserver();
+        this.buildDots();
+        this.setupKeys();
+        this.setupTouch();
+        this.setupWheel();
+      }
+
+      /* Trigger .visible on slides entering viewport */
+      setupObserver() {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            e.target.classList.add('visible');
+            this.current = this.slides.indexOf(e.target);
+            this.updateBar(this.current);
+            this.updateDots(this.current);
+          });
+        }, { threshold: 0.5 });
+        this.slides.forEach(s => io.observe(s));
+      }
+
+      buildDots() {
+        /* Clear first — prevents duplicates if outerHTML was saved */
+        this.dotsEl.innerHTML = '';
+        this.slides.forEach((_, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'nav-dot' + (i === 0 ? ' active' : '');
+          btn.setAttribute('aria-label', `Slide ${i + 1}`);
+          btn.addEventListener('click', () => this.goto(i));
+          this.dotsEl.appendChild(btn);
+        });
+      }
+
+      updateDots(idx) {
+        this.dotsEl.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+
+      updateBar(idx) {
+        const p = this.total > 1 ? idx / (this.total - 1) : 1;
+        this.bar.style.transform = `scaleX(${p})`;
+      }
+
+      goto(idx) {
+        const i = Math.max(0, Math.min(idx, this.total - 1));
+        this.slides[i].scrollIntoView({ behavior: 'smooth' });
+      }
+
+      setupKeys() {
+        document.addEventListener('keydown', e => {
+          if (['ArrowDown','ArrowRight',' ','PageDown'].includes(e.key)) { e.preventDefault(); this.goto(this.current + 1); }
+          if (['ArrowUp','ArrowLeft','PageUp'].includes(e.key))          { e.preventDefault(); this.goto(this.current - 1); }
+        });
+      }
+
+      setupTouch() {
+        let y0 = 0;
+        document.addEventListener('touchstart', e => { y0 = e.touches[0].clientY; }, { passive: true });
+        document.addEventListener('touchend',   e => {
+          const dy = y0 - e.changedTouches[0].clientY;
+          if (Math.abs(dy) > 40) this.goto(this.current + (dy > 0 ? 1 : -1));
+        }, { passive: true });
+      }
+
+      setupWheel() {
+        document.addEventListener('wheel', e => {
+          if (this.isScrolling) return;
+          this.isScrolling = true;
+          this.goto(this.current + (e.deltaY > 0 ? 1 : -1));
+          setTimeout(() => { this.isScrolling = false; }, 900);
+        }, { passive: true });
+      }
+    }
+
+    new SlidePresentation();
+  </script>
+</body>
+</html>
