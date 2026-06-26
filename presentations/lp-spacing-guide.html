@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spacing & Padding in UI/UX Design — LP Design Team</title>
+  <title>Spacing & Padding in UI/UX Design â€” LP Design Team</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
 
     /* === THEME VARIABLES === */
@@ -27,7 +27,7 @@
       --stone:          #C8BFB6;
       --border:         #DDD8D2;
       --border-light:   #EAE6E0;
-      --font-display:   'Fraunces', serif;
+      --font-display:   'Playfair Display', serif;
       --font-body:      'Work Sans', sans-serif;
       --ease-expo:      cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
@@ -186,7 +186,7 @@
     /* Rule list */
     .rule-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.5rem,1.2vh,1rem); }
     .rule-list li { display: flex; gap: 0.65rem; align-items: flex-start; }
-    .rule-list li::before { content: '—'; color: var(--sage); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
+    .rule-list li::before { content: 'â€”'; color: var(--sage); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
     .rule-list li span { font-size: var(--body-size); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
 
     /* Divider with label */
@@ -194,9 +194,9 @@
     .divider-labeled .line { flex: 1; height: 1px; background: var(--border); }
     .divider-labeled .text { font-size: var(--small-size); color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; white-space: nowrap; }
 
-    /* ═════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SLIDE 1: TITLE
-    ═════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .slide-title { background: var(--bg); }
     .slide-title .slide-content {
       padding-left: clamp(3rem,9vw,9rem);
@@ -224,9 +224,9 @@
     .meta-italic { font-family: var(--font-display); font-style: italic; font-size: var(--small-size); color: var(--stone); }
     .meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--sage); }
 
-    /* ═════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SLIDE 2: WHY SPACING MATTERS
-    ═════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .why-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.625rem,1.5vw,1.25rem); }
     @media (max-width:700px) { .why-cards { grid-template-columns: 1fr; } }
     .why-card {
@@ -246,9 +246,9 @@
     }
     .why-text { font-size: clamp(0.6rem,0.92vw,0.78rem); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
 
-    /* ═════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SLIDE 3: THREE LENSES
-    ═════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .lens-list { display: flex; flex-direction: column; gap: clamp(0.625rem,1.6vh,1.375rem); margin-top: clamp(0.25rem,0.8vh,0.75rem); }
     .lens-item { display: grid; grid-template-columns: clamp(36px,4vw,52px) 1fr; gap: clamp(0.75rem,2vw,1.5rem); align-items: start; }
     .lens-num {
@@ -266,9 +266,9 @@
     }
     .lens-desc { font-size: var(--body-size); font-weight: 300; color: var(--text-secondary); line-height: 1.55; margin-top: 0.15rem; }
 
-    /* ═════════════════════════════════════════
-       SLIDES 4-6: DOs — SPACING MOCKUP ELEMENTS
-    ═════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDES 4-6: DOs â€” SPACING MOCKUP ELEMENTS
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .mockup-frame {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 10px; overflow: hidden;
@@ -309,9 +309,9 @@
       display: flex; flex-direction: column; gap: 0.3rem;
     }
 
-    /* ═════════════════════════════════════════
-       SLIDE 5: BREATHE — COMPARISON
-    ═════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 5: BREATHE â€” COMPARISON
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .breathe-compare { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.75rem,2vw,1.75rem); }
     @media (max-width:600px) { .breathe-compare { grid-template-columns: 1fr; } }
     .breathe-panel {
@@ -329,9 +329,9 @@
       font-size: clamp(0.5rem,0.75vw,0.62rem); color: var(--text-secondary);
     }
 
-    /* ═════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SLIDE 6: PADDING AS SEPARATOR
-    ═════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .separator-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.625rem,1.5vw,1.25rem); }
     @media (max-width:700px) { .separator-grid { grid-template-columns: 1fr; } }
     .sep-panel {
@@ -346,9 +346,9 @@
     }
     .sep-verdict { font-size: clamp(0.5rem,0.78vw,0.64rem); font-weight: 400; color: var(--text-secondary); line-height: 1.4; }
 
-    /* ═════════════════════════════════════════
-       SLIDE 7: DON'T — FULL-BLEED STACK
-    ═════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 7: DON'T â€” FULL-BLEED STACK
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .fullbleed-compare { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.875rem,2.2vw,2rem); align-items: start; }
     @media (max-width:600px) { .fullbleed-compare { grid-template-columns: 1fr; } }
     .fb-panel {
@@ -370,9 +370,9 @@
       display: flex; gap: 0.4rem; align-items: flex-start;
     }
 
-    /* ═════════════════════════════════════════
-       SLIDE 8: DON'T — SACRIFICE SPACING
-    ═════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 8: DON'T â€” SACRIFICE SPACING
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .quote-block {
       background: var(--bg-card); border: 1px solid var(--border-light);
       border-left: 3px solid var(--sage); border-radius: 8px;
@@ -389,9 +389,9 @@
       margin-top: clamp(0.4rem,0.8vh,0.625rem); letter-spacing: 0.06em;
     }
 
-    /* ═════════════════════════════════════════
-       SLIDE 9: DON'T — MIXED PADDING
-    ═════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 9: DON'T â€” MIXED PADDING
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .mixed-compare { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.875rem,2.2vw,2rem); align-items: start; }
     @media (max-width:600px) { .mixed-compare { grid-template-columns: 1fr; } }
     .mixed-panel {
@@ -417,9 +417,9 @@
       display: flex; gap: 0.4rem; align-items: flex-start;
     }
 
-    /* ═════════════════════════════════════════
-       SLIDE 10: DON'T — FULL-WIDTH TEXT
-    ═════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 10: DON'T â€” FULL-WIDTH TEXT
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .width-compare { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.875rem,2.2vw,2rem); align-items: start; }
     @media (max-width:600px) { .width-compare { grid-template-columns: 1fr; } }
     .width-panel {
@@ -438,9 +438,9 @@
       display: flex; gap: 0.4rem; align-items: flex-start;
     }
 
-    /* ═════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SLIDE 11: APPLY TO DRAFTS
-    ═════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .apply-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.625rem,1.5vw,1.25rem); }
     @media (max-width:700px) { .apply-cards { grid-template-columns: 1fr; } }
     .apply-card {
@@ -461,11 +461,11 @@
     .apply-text { font-size: clamp(0.58rem,0.88vw,0.72rem); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
     .apply-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.5rem; }
     .apply-checklist li { display: flex; gap: 0.4rem; align-items: flex-start; font-size: clamp(0.55rem,0.82vw,0.68rem); font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
-    .apply-checklist li::before { content: '↗'; color: var(--sage); flex-shrink: 0; font-size: 0.75em; margin-top: 0.1em; }
+    .apply-checklist li::before { content: 'â†—'; color: var(--sage); flex-shrink: 0; font-size: 0.75em; margin-top: 0.1em; }
 
-    /* ═════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SLIDE 12: QUICK REFERENCE (CLOSING)
-    ═════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .slide-closing { background: var(--bg-closing); }
     .slide-closing .eyebrow { color: var(--sage-light); }
     .slide-closing .h-section { color: #E8E4DC; }
@@ -504,13 +504,13 @@
   <div class="progress-bar" id="progressBar"></div>
   <nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 1 — TITLE
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 1 â€” TITLE
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide slide-title">
     <div class="bg-letter" aria-hidden="true">S</div>
     <div class="slide-content" style="position:relative;z-index:1;">
-      <span class="eyebrow reveal">Luxury Presence · Design Principles Development Hub</span>
+      <span class="eyebrow reveal">Luxury Presence Â· Design Principles Development Hub</span>
       <div class="title-rule reveal"></div>
       <h1 class="h-display reveal">
         Spacing<br>&amp; Padding<br><span style="font-weight:400;color:var(--text-secondary);">in Design</span>
@@ -532,9 +532,9 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 2 — WHY SPACING MATTERS
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 2 â€” WHY SPACING MATTERS
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">01 / 11</span>
     <div class="slide-content">
@@ -564,9 +564,9 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 3 — THREE LENSES
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 3 â€” THREE LENSES
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">02 / 11</span>
     <div class="slide-content">
@@ -581,14 +581,14 @@
           <div class="lens-num">W</div>
           <div class="lens-body">
             <div class="lens-name">Weight</div>
-            <div class="lens-desc">Is there visual balance? Is anything too heavy or too light? Does one element dominate when it shouldn't — or disappear when it should be felt?</div>
+            <div class="lens-desc">Is there visual balance? Is anything too heavy or too light? Does one element dominate when it shouldn't â€” or disappear when it should be felt?</div>
           </div>
         </div>
         <div class="lens-item reveal">
           <div class="lens-num">P</div>
           <div class="lens-body">
             <div class="lens-name">Padding</div>
-            <div class="lens-desc">Are text blocks, buttons, and images given room to breathe? Are spacing values consistent sitewide — or do they drift from section to section?</div>
+            <div class="lens-desc">Are text blocks, buttons, and images given room to breathe? Are spacing values consistent sitewide â€” or do they drift from section to section?</div>
           </div>
         </div>
         <div class="lens-item reveal">
@@ -602,9 +602,9 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 4 — DO: CONSISTENT VERTICAL RHYTHM
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 4 â€” DO: CONSISTENT VERTICAL RHYTHM
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">03 / 11</span>
     <div class="slide-content">
@@ -617,9 +617,9 @@
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
             <li class="reveal"><span>If section spacing is set to 96px, keep it at 96px throughout the page</span></li>
-            <li class="reveal"><span>Don't mix 40px, 80px, and 120px arbitrarily — choose a value and commit</span></li>
+            <li class="reveal"><span>Don't mix 40px, 80px, and 120px arbitrarily â€” choose a value and commit</span></li>
             <li class="reveal"><span>Only tighten spacing when two adjacent elements share the same background color</span></li>
-            <li class="reveal"><span>A consistent vertical rhythm feels designed — inconsistency reads as rushed</span></li>
+            <li class="reveal"><span>A consistent vertical rhythm feels designed â€” inconsistency reads as rushed</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;justify-content:center;gap:clamp(0.5rem,1.2vw,0.875rem);">
@@ -647,15 +647,15 @@
               <div class="content-bar w-half"></div>
             </div>
           </div>
-          <p class="mockup-label">Equal section gaps — consistent rhythm throughout</p>
+          <p class="mockup-label">Equal section gaps â€” consistent rhythm throughout</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 5 — DO: GIVE CONTENT ROOM TO BREATHE
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 5 â€” DO: GIVE CONTENT ROOM TO BREATHE
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">04 / 11</span>
     <div class="slide-content">
@@ -676,8 +676,8 @@
             <div class="content-bar sage w-1q" style="margin-top:2px;"></div>
           </div>
           <div class="breathe-footer" style="background:rgba(184,80,66,0.05);">
-            <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-            <span>No breathing room — headline, body, and CTA collide into a block</span>
+            <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+            <span>No breathing room â€” headline, body, and CTA collide into a block</span>
           </div>
         </div>
         <div class="breathe-panel good reveal">
@@ -690,17 +690,17 @@
             <div class="content-bar sage w-1q"></div>
           </div>
           <div class="breathe-footer" style="background:var(--sage-dim);">
-            <span style="color:var(--sage);flex-shrink:0;">✓</span>
-            <span>Generous gaps — headline breathes, body reads, CTA stands alone</span>
+            <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+            <span>Generous gaps â€” headline breathes, body reads, CTA stands alone</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 6 — DO: PADDING AS VISUAL SEPARATOR
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 6 â€” DO: PADDING AS VISUAL SEPARATOR
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">05 / 11</span>
     <div class="slide-content">
@@ -708,7 +708,7 @@
         <span class="eyebrow reveal">Do</span>
         <div class="title-rule reveal"></div>
         <h2 class="h-section reveal">Use Padding to Separate,<br>Not Color or Lines</h2>
-        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.5vh,0.4rem);">Space is the most invisible — and most powerful — separator. It keeps layouts clean where borders would add noise.</p>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.5vh,0.4rem);">Space is the most invisible â€” and most powerful â€” separator. It keeps layouts clean where borders would add noise.</p>
       </div>
       <div class="separator-grid stagger">
         <div class="sep-panel reveal" style="border-color:rgba(184,80,66,0.3);">
@@ -724,8 +724,8 @@
             </div>
           </div>
           <div class="sep-footer">
-            <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-            <span class="sep-verdict">Colored bg + divider line — heavy-handed, cluttered</span>
+            <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+            <span class="sep-verdict">Colored bg + divider line â€” heavy-handed, cluttered</span>
           </div>
         </div>
         <div class="sep-panel reveal" style="border-color:rgba(184,80,66,0.3);">
@@ -741,8 +741,8 @@
             </div>
           </div>
           <div class="sep-footer">
-            <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-            <span class="sep-verdict">Divider line alone — redundant when spacing already works</span>
+            <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+            <span class="sep-verdict">Divider line alone â€” redundant when spacing already works</span>
           </div>
         </div>
         <div class="sep-panel reveal" style="border-color:rgba(122,158,135,0.3);">
@@ -757,17 +757,17 @@
             </div>
           </div>
           <div class="sep-footer" style="background:var(--sage-dim);">
-            <span style="color:var(--sage);flex-shrink:0;">✓</span>
-            <span class="sep-verdict">Gap alone — clean separation, nothing extra needed</span>
+            <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+            <span class="sep-verdict">Gap alone â€” clean separation, nothing extra needed</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 7 — DON'T: FULL-BLEED STACKING
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 7 â€” DON'T: FULL-BLEED STACKING
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">06 / 11</span>
     <div class="slide-content">
@@ -789,8 +789,8 @@
             </div>
           </div>
           <div class="fb-footer">
-            <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-            Two full-bleed sections collide — no breathing room, the boundary disappears
+            <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+            Two full-bleed sections collide â€” no breathing room, the boundary disappears
           </div>
         </div>
         <div class="fb-panel good reveal">
@@ -804,17 +804,17 @@
             </div>
           </div>
           <div class="fb-footer" style="background:var(--sage-dim);">
-            <span style="color:var(--sage);flex-shrink:0;">✓</span>
-            White-space buffer between full-bleed sections — each has room to start and end clearly
+            <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+            White-space buffer between full-bleed sections â€” each has room to start and end clearly
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 8 — DON'T: SACRIFICE SPACING FOR CONTENT
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 8 â€” DON'T: SACRIFICE SPACING FOR CONTENT
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">07 / 11</span>
     <div class="slide-content">
@@ -825,19 +825,19 @@
       </div>
       <div class="quote-block reveal">
         <p class="quote-text">"Luxury is defined by what you leave out, not what you cram in."</p>
-        <p class="quote-source">LP Design Principles · Spacing Guide</p>
+        <p class="quote-source">LP Design Principles Â· Spacing Guide</p>
       </div>
       <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.8vh,0.625rem);">
-        <li class="reveal"><span>If content doesn't fit with proper spacing, the <em>content</em> needs editing — not the margins</span></li>
+        <li class="reveal"><span>If content doesn't fit with proper spacing, the <em>content</em> needs editing â€” not the margins</span></li>
         <li class="reveal"><span>Cramped padding is not a solution; it signals that the layout hasn't been properly considered</span></li>
         <li class="reveal"><span>Reducing margins below the rhythm value to fit one more element breaks the system for every subsequent section</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 9 — DON'T: MIXED PADDING VALUES
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 9 â€” DON'T: MIXED PADDING VALUES
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">08 / 11</span>
     <div class="slide-content">
@@ -845,62 +845,62 @@
         <span class="eyebrow red reveal">Don't</span>
         <div class="title-rule reveal"></div>
         <h2 class="h-section reveal">Don't Mix Padding Values<br>Across Similar Sections</h2>
-        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.5vh,0.4rem);">If the bio section has 60px top/bottom padding, the testimonial section should match — unless there's a clear intentional rhythm.</p>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.5vh,0.4rem);">If the bio section has 60px top/bottom padding, the testimonial section should match â€” unless there's a clear intentional rhythm.</p>
       </div>
       <div class="mixed-compare stagger">
         <div class="mixed-panel bad reveal">
           <div class="mixed-visual">
             <div class="mixed-row" style="padding:clamp(0.2rem,0.5vw,0.4rem) 0 clamp(0.6rem,1.4vw,1.1rem);">
-              <span class="mixed-row-label">Bio section · 60px</span>
+              <span class="mixed-row-label">Bio section Â· 60px</span>
               <div class="mixed-bar w-full" style="width:100%;"></div>
               <div class="mixed-bar" style="width:80%;"></div>
             </div>
             <div class="mixed-row" style="padding:clamp(0.4rem,0.9vw,0.75rem) 0 clamp(1rem,2.4vw,1.875rem);">
-              <span class="mixed-row-label">Testimonial · 120px</span>
+              <span class="mixed-row-label">Testimonial Â· 120px</span>
               <div class="mixed-bar w-full" style="width:100%;"></div>
               <div class="mixed-bar" style="width:70%;"></div>
             </div>
             <div class="mixed-row" style="padding:clamp(0.2rem,0.4vw,0.3rem) 0 clamp(0.3rem,0.7vw,0.55rem);">
-              <span class="mixed-row-label">Team section · 32px</span>
+              <span class="mixed-row-label">Team section Â· 32px</span>
               <div class="mixed-bar w-full" style="width:100%;"></div>
               <div class="mixed-bar" style="width:60%;"></div>
             </div>
           </div>
           <div class="mixed-footer">
-            <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-            Three different padding values — arbitrary, inconsistent, unrhythmic
+            <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+            Three different padding values â€” arbitrary, inconsistent, unrhythmic
           </div>
         </div>
         <div class="mixed-panel good reveal">
           <div class="mixed-visual">
             <div class="mixed-row" style="padding:clamp(0.35rem,0.85vw,0.7rem) 0;">
-              <span class="mixed-row-label">Bio section · 96px</span>
+              <span class="mixed-row-label">Bio section Â· 96px</span>
               <div class="mixed-bar w-full" style="width:100%;"></div>
               <div class="mixed-bar" style="width:80%;"></div>
             </div>
             <div class="mixed-row" style="padding:clamp(0.35rem,0.85vw,0.7rem) 0;">
-              <span class="mixed-row-label">Testimonial · 96px</span>
+              <span class="mixed-row-label">Testimonial Â· 96px</span>
               <div class="mixed-bar w-full" style="width:100%;"></div>
               <div class="mixed-bar" style="width:70%;"></div>
             </div>
             <div class="mixed-row" style="padding:clamp(0.35rem,0.85vw,0.7rem) 0;">
-              <span class="mixed-row-label">Team section · 96px</span>
+              <span class="mixed-row-label">Team section Â· 96px</span>
               <div class="mixed-bar w-full" style="width:100%;"></div>
               <div class="mixed-bar" style="width:60%;"></div>
             </div>
           </div>
           <div class="mixed-footer" style="background:var(--sage-dim);">
-            <span style="color:var(--sage);flex-shrink:0;">✓</span>
-            Consistent 96px across all similar sections — the page has a heartbeat
+            <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+            Consistent 96px across all similar sections â€” the page has a heartbeat
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 10 — DON'T: FULL-WIDTH BODY TEXT
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 10 â€” DON'T: FULL-WIDTH BODY TEXT
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">09 / 11</span>
     <div class="slide-content">
@@ -908,7 +908,7 @@
         <span class="eyebrow red reveal">Don't</span>
         <div class="title-rule reveal"></div>
         <h2 class="h-section reveal">Avoid Text Running<br>Full-Width in a Section</h2>
-        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.5vh,0.4rem);">Body copy should be constrained to ~60–75 characters per line. Full-width text on desktop is unreadable and looks unfinished.</p>
+        <p class="lead reveal" style="margin-top:clamp(0.2rem,0.5vh,0.4rem);">Body copy should be constrained to ~60â€“75 characters per line. Full-width text on desktop is unreadable and looks unfinished.</p>
       </div>
       <div class="width-compare stagger">
         <div class="width-panel bad reveal">
@@ -923,8 +923,8 @@
             <div class="text-line" style="width:88%;"></div>
           </div>
           <div class="width-footer">
-            <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-            Full-width text — the line is too long, the eye struggles to track to the next line
+            <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+            Full-width text â€” the line is too long, the eye struggles to track to the next line
           </div>
         </div>
         <div class="width-panel good reveal">
@@ -939,17 +939,17 @@
             <div class="text-line" style="width:55%;"></div>
           </div>
           <div class="width-footer" style="background:var(--sage-dim);">
-            <span style="color:var(--sage);flex-shrink:0;">✓</span>
-            ~65 char line length — comfortable, readable, intentional
+            <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+            ~65 char line length â€” comfortable, readable, intentional
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 11 — APPLY TO YOUR DRAFTS
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 11 â€” APPLY TO YOUR DRAFTS
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide">
     <span class="slide-num">10 / 11</span>
     <div class="slide-content">
@@ -991,9 +991,9 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SLIDE 12 — QUICK REFERENCE (CLOSING)
-  ═══════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       SLIDE 12 â€” QUICK REFERENCE (CLOSING)
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="slide slide-closing">
     <div class="closing-orb-1" aria-hidden="true"></div>
     <div class="closing-orb-2" aria-hidden="true"></div>
@@ -1006,25 +1006,25 @@
       </div>
       <div class="quick-ref stagger">
         <div class="reveal">
-          <div class="qr-label green">✓ Do</div>
+          <div class="qr-label green">âœ“ Do</div>
           <ul class="qr-list">
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Maintain one consistent vertical padding value throughout (e.g. 96px)</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Give content generous breathing room between headline, body, and CTA</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Use spacing — not lines or color — to separate content blocks</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Alternate full-bleed sections with contained or white-space ones</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Constrain body text to ~60–75 characters per line</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Review spacing at both desktop and mobile breakpoints</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Maintain one consistent vertical padding value throughout (e.g. 96px)</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Give content generous breathing room between headline, body, and CTA</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Use spacing â€” not lines or color â€” to separate content blocks</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Alternate full-bleed sections with contained or white-space ones</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Constrain body text to ~60â€“75 characters per line</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Review spacing at both desktop and mobile breakpoints</span></li>
           </ul>
         </div>
         <div class="reveal">
-          <div class="qr-label red">✗ Don't</div>
+          <div class="qr-label red">âœ— Don't</div>
           <ul class="qr-list">
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Mix arbitrary padding values across similar sections</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Cram content in by reducing spacing — edit the content instead</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Stack two full-bleed sections directly against each other</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Use colored backgrounds or lines as a substitute for spacing</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Let body text run full-width across large screens</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Treat spacing as decoration — it's structure</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Mix arbitrary padding values across similar sections</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Cram content in by reducing spacing â€” edit the content instead</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Stack two full-bleed sections directly against each other</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Use colored backgrounds or lines as a substitute for spacing</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Let body text run full-width across large screens</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Treat spacing as decoration â€” it's structure</span></li>
           </ul>
         </div>
       </div>
@@ -1046,7 +1046,6 @@
         this.buildDots();
         this.setupKeys();
         this.setupTouch();
-        this.setupWheel();
       }
 
       setupObserver() {
@@ -1100,15 +1099,6 @@
         document.addEventListener('touchend',   e => {
           const dy = y0 - e.changedTouches[0].clientY;
           if (Math.abs(dy) > 40) this.goto(this.current + (dy > 0 ? 1 : -1));
-        }, { passive: true });
-      }
-
-      setupWheel() {
-        document.addEventListener('wheel', e => {
-          if (this.isScrolling) return;
-          this.isScrolling = true;
-          this.goto(this.current + (e.deltaY > 0 ? 1 : -1));
-          setTimeout(() => { this.isScrolling = false; }, 900);
         }, { passive: true });
       }
     }

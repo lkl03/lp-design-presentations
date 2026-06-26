@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsiveness — LP Web Builder Training</title>
+  <title>Responsiveness â€” LP Web Builder Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg:             #F7F4EF;
@@ -25,7 +25,7 @@
       --stone:          #C8BFB6;
       --border:         #DDD8D2;
       --border-light:   #EAE6E0;
-      --font-display:   'Fraunces', serif;
+      --font-display:   'Playfair Display', serif;
       --font-body:      'Work Sans', sans-serif;
       --ease-expo:      cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
@@ -132,7 +132,7 @@
     @media (max-width:700px) { .two-col { grid-template-columns: 1fr; } }
     .rule-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.5rem,1.2vh,1rem); }
     .rule-list li { display: flex; gap: 0.65rem; align-items: flex-start; }
-    .rule-list li::before { content: '—'; color: var(--sage); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
+    .rule-list li::before { content: 'â€”'; color: var(--sage); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
     .rule-list li span { font-size: var(--body-size); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
 
     /* === TITLE SLIDE === */
@@ -230,7 +230,7 @@
     .apply-text { font-size: clamp(0.58rem,0.88vw,0.72rem); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
     .apply-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.5rem; }
     .apply-checklist li { display: flex; gap: 0.4rem; align-items: flex-start; font-size: clamp(0.55rem,0.82vw,0.68rem); font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
-    .apply-checklist li::before { content: '↗'; color: var(--sage); flex-shrink: 0; font-size: 0.75em; margin-top: 0.1em; }
+    .apply-checklist li::before { content: 'â†—'; color: var(--sage); flex-shrink: 0; font-size: 0.75em; margin-top: 0.1em; }
 
     /* === QUOTE === */
     .quote-block {
@@ -306,11 +306,11 @@
   <div class="progress-bar" id="progressBar"></div>
   <nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
 
-  <!-- SLIDE 1 — TITLE -->
+  <!-- SLIDE 1 â€” TITLE -->
   <section class="slide slide-title">
     <div class="bg-letter" aria-hidden="true">R</div>
     <div class="slide-content" style="position:relative;z-index:1;">
-      <span class="eyebrow reveal">Luxury Presence · Web Builder Training</span>
+      <span class="eyebrow reveal">Luxury Presence Â· Web Builder Training</span>
       <div class="title-rule reveal"></div>
       <h1 class="h-display reveal">
         Respon&shy;sive&shy;ness<br><span style="font-weight:400;color:var(--text-secondary);">Best Practices</span>
@@ -320,7 +320,7 @@
         <div class="title-swatch-bar" style="width:clamp(36px,3.5vw,52px);background:var(--sage);"></div>
         <div class="title-swatch-bar" style="width:clamp(24px,2.5vw,36px);background:var(--sage-light);"></div>
         <div class="title-swatch-bar" style="width:clamp(8px,0.8vw,12px);background:var(--stone);"></div>
-        <span style="font-size:var(--small-size);color:var(--text-muted);margin-left:0.4rem;font-style:italic;font-family:var(--font-display);">desktop → tablet → mobile</span>
+        <span style="font-size:var(--small-size);color:var(--text-muted);margin-left:0.4rem;font-style:italic;font-family:var(--font-display);">desktop â†’ tablet â†’ mobile</span>
       </div>
     </div>
     <div class="title-meta">
@@ -329,7 +329,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 2 — WHY RESPONSIVENESS MATTERS -->
+  <!-- SLIDE 2 â€” WHY RESPONSIVENESS MATTERS -->
   <section class="slide">
     <span class="slide-num">01 / 09</span>
     <div class="slide-content">
@@ -348,7 +348,7 @@
         <div class="why-card reveal">
           <div class="why-num">02</div>
           <div class="why-title">Luxury on Every Device</div>
-          <p class="why-text">Premium brand standards don't pause at 375px. A luxury experience must feel intentional and polished at every breakpoint — not just 1440px.</p>
+          <p class="why-text">Premium brand standards don't pause at 375px. A luxury experience must feel intentional and polished at every breakpoint â€” not just 1440px.</p>
         </div>
         <div class="why-card reveal">
           <div class="why-num">03</div>
@@ -359,28 +359,28 @@
     </div>
   </section>
 
-  <!-- SLIDE 3 — DO: QA ALL BREAKPOINTS -->
+  <!-- SLIDE 3 â€” DO: QA ALL BREAKPOINTS -->
   <section class="slide">
     <span class="slide-num">02 / 09</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">QA Every Page at<br>All Breakpoints</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
-            <li class="reveal"><span>Check mobile, tablet, and desktop — what works at 1440px can break at 375px</span></li>
+            <li class="reveal"><span>Check mobile, tablet, and desktop â€” what works at 1440px can break at 375px</span></li>
             <li class="reveal"><span>Don't approve a site without checking mobile. Period.</span></li>
             <li class="reveal"><span>Use DevTools device emulation for every page, not just the homepage</span></li>
-            <li class="reveal"><span>Check inner pages: property detail, bio pages, contact — not just hero sections</span></li>
+            <li class="reveal"><span>Check inner pages: property detail, bio pages, contact â€” not just hero sections</span></li>
           </ul>
           <div class="bp-pills reveal">
-            <div class="bp-pill"><div class="bp-dot"></div>375px — Mobile</div>
-            <div class="bp-pill"><div class="bp-dot"></div>768px — Tablet</div>
-            <div class="bp-pill"><div class="bp-dot"></div>1280px — Desktop</div>
-            <div class="bp-pill"><div class="bp-dot"></div>1440px — Wide</div>
+            <div class="bp-pill"><div class="bp-dot"></div>375px â€” Mobile</div>
+            <div class="bp-pill"><div class="bp-dot"></div>768px â€” Tablet</div>
+            <div class="bp-pill"><div class="bp-dot"></div>1280px â€” Desktop</div>
+            <div class="bp-pill"><div class="bp-dot"></div>1440px â€” Wide</div>
           </div>
         </div>
         <div class="reveal">
@@ -398,7 +398,7 @@
                 <div class="device-bar" style="width:75%;"></div>
                 <div class="device-bar sage" style="width:40%;margin-top:0.2rem;"></div>
               </div>
-              <div class="device-label good">1440px ✓</div>
+              <div class="device-label good">1440px âœ“</div>
             </div>
             <div class="device-frame">
               <div class="device-header" style="padding-left:clamp(0.25rem,0.5vw,0.4rem);">
@@ -412,7 +412,7 @@
                 <div class="device-bar" style="width:70%;"></div>
                 <div class="device-bar sage" style="width:50%;margin-top:0.15rem;"></div>
               </div>
-              <div class="device-label good">768px ✓</div>
+              <div class="device-label good">768px âœ“</div>
             </div>
             <div class="mobile-frame" style="margin:0 auto;">
               <div class="mobile-notch"></div>
@@ -425,7 +425,7 @@
                 <div class="mob-bar" style="width:70%;"></div>
                 <div class="mob-bar sage" style="width:60%;"></div>
               </div>
-              <div class="device-label good" style="font-size:clamp(0.4rem,0.58vw,0.48rem);">375px ✓</div>
+              <div class="device-label good" style="font-size:clamp(0.4rem,0.58vw,0.48rem);">375px âœ“</div>
             </div>
           </div>
         </div>
@@ -433,20 +433,20 @@
     </div>
   </section>
 
-  <!-- SLIDE 4 — DO: NAVIGATION -->
+  <!-- SLIDE 4 â€” DO: NAVIGATION -->
   <section class="slide">
     <span class="slide-num">03 / 09</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Verify Navigation<br>Collapses Cleanly</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
             <li class="reveal"><span>Navigation must collapse into a hamburger menu on mobile with no overlap or clipping</span></li>
-            <li class="reveal"><span>Test that the hamburger menu opens and closes correctly — tap, not just click</span></li>
+            <li class="reveal"><span>Test that the hamburger menu opens and closes correctly â€” tap, not just click</span></li>
             <li class="reveal"><span>All nav items must be reachable and tappable on mobile</span></li>
             <li class="reveal"><span>Check that an open mobile menu doesn't obscure key content or CTAs beneath it</span></li>
           </ul>
@@ -455,7 +455,7 @@
           <div class="compare-grid">
             <div class="cmp-panel bad">
               <div class="cmp-inner">
-                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Nav on mobile ✗</div>
+                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Nav on mobile âœ—</div>
                 <div style="background:var(--bg-warm);border-radius:5px;padding:clamp(0.3rem,0.6vh,0.4rem) clamp(0.4rem,0.8vw,0.55rem);display:flex;gap:0.4rem;align-items:center;overflow:hidden;">
                   <div style="font-size:clamp(0.52rem,0.8vw,0.65rem);font-weight:500;color:var(--text-primary);white-space:nowrap;">Logo</div>
                   <div style="display:flex;gap:0.25rem;overflow:hidden;">
@@ -466,13 +466,13 @@
                 </div>
               </div>
               <div class="cmp-footer" style="background:rgba(184,80,66,0.05);">
-                <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-                <span>Full nav visible — items overflow and clip</span>
+                <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+                <span>Full nav visible â€” items overflow and clip</span>
               </div>
             </div>
             <div class="cmp-panel good">
               <div class="cmp-inner">
-                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Hamburger ✓</div>
+                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Hamburger âœ“</div>
                 <div style="background:var(--bg-warm);border-radius:5px;padding:clamp(0.3rem,0.6vh,0.4rem) clamp(0.4rem,0.8vw,0.55rem);display:flex;justify-content:space-between;align-items:center;">
                   <div style="font-size:clamp(0.52rem,0.8vw,0.65rem);font-weight:500;color:var(--text-primary);">Logo</div>
                   <div style="display:flex;flex-direction:column;gap:clamp(2px,0.35vh,3px);">
@@ -483,8 +483,8 @@
                 </div>
               </div>
               <div class="cmp-footer" style="background:var(--sage-dim);">
-                <span style="color:var(--sage);flex-shrink:0;">✓</span>
-                <span>Hamburger collapses nav — clean at 375px</span>
+                <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+                <span>Hamburger collapses nav â€” clean at 375px</span>
               </div>
             </div>
           </div>
@@ -493,19 +493,19 @@
     </div>
   </section>
 
-  <!-- SLIDE 5 — DON'T: HORIZONTAL SCROLL -->
+  <!-- SLIDE 5 â€” DON'T: HORIZONTAL SCROLL -->
   <section class="slide">
     <span class="slide-num">04 / 09</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow red reveal">Don't ⛔️</span>
+            <span class="eyebrow red reveal">Don't â›”ï¸</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">No Horizontal<br>Scroll on Mobile</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
-            <li class="reveal"><span>If any section causes horizontal overflow, it's a blocker — the site cannot ship</span></li>
+            <li class="reveal"><span>If any section causes horizontal overflow, it's a blocker â€” the site cannot ship</span></li>
             <li class="reveal"><span>Common culprits: fixed-width elements, images without max-width, tables, or wide grid columns</span></li>
             <li class="reveal"><span>Test with DevTools: open the mobile view, then slowly widen to find the overflow point</span></li>
             <li class="reveal"><span>Check CSS for any hard-coded widths (width: 600px) that aren't wrapped in a media query</span></li>
@@ -515,7 +515,7 @@
           <div class="overflow-demo" style="border-color:rgba(184,80,66,0.3);">
             <div style="overflow:hidden;">
               <div class="overflow-inner">
-                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Horizontal overflow ✗</div>
+                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Horizontal overflow âœ—</div>
                 <div class="overflow-bar" style="width:100%;"></div>
                 <div class="overflow-bar" style="width:100%;"></div>
                 <div style="display:flex;gap:0.3rem;width:150%;margin-top:0.2rem;">
@@ -528,15 +528,15 @@
                 </div>
                 <div style="display:flex;align-items:center;gap:0.3rem;margin-top:0.2rem;">
                   <div style="flex:1;height:1px;background:rgba(184,80,66,0.3);border-top:1px dashed rgba(184,80,66,0.4);"></div>
-                  <div style="font-size:clamp(0.42rem,0.62vw,0.52rem);color:var(--terracotta);white-space:nowrap;">content overflows →</div>
+                  <div style="font-size:clamp(0.42rem,0.62vw,0.52rem);color:var(--terracotta);white-space:nowrap;">content overflows â†’</div>
                 </div>
               </div>
             </div>
-            <div class="overflow-caption bad">Fixed-width columns extend past viewport — page scrolls sideways ✗</div>
+            <div class="overflow-caption bad">Fixed-width columns extend past viewport â€” page scrolls sideways âœ—</div>
           </div>
           <div class="overflow-demo" style="border-color:rgba(122,158,135,0.3);">
             <div class="overflow-inner">
-              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Fluid columns ✓</div>
+              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Fluid columns âœ“</div>
               <div class="overflow-bar" style="width:100%;"></div>
               <div style="display:flex;flex-direction:column;gap:0.25rem;margin-top:0.2rem;">
                 <div style="background:var(--bg-warm);border-radius:4px;padding:0.3rem;height:clamp(20px,3.2vh,28px);display:flex;align-items:center;">
@@ -547,33 +547,33 @@
                 </div>
               </div>
             </div>
-            <div class="overflow-caption good">Columns stack — content fits within 375px viewport ✓</div>
+            <div class="overflow-caption good">Columns stack â€” content fits within 375px viewport âœ“</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 6 — DO: TAP-FRIENDLY CTAs + SPLIT BLOCKS -->
+  <!-- SLIDE 6 â€” DO: TAP-FRIENDLY CTAs + SPLIT BLOCKS -->
   <section class="slide">
     <span class="slide-num">05 / 09</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Tap-Friendly CTAs +<br>Restacking Blocks</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
-            <li class="reveal"><span>CTAs must be tap-friendly on mobile — minimum 44×44px touch target (Apple HIG)</span></li>
-            <li class="reveal"><span>Split blocks (image + text) must restack gracefully — image first, text below</span></li>
-            <li class="reveal"><span>Maintain a logical reading order when blocks stack: headline → image → body → CTA</span></li>
+            <li class="reveal"><span>CTAs must be tap-friendly on mobile â€” minimum 44Ã—44px touch target (Apple HIG)</span></li>
+            <li class="reveal"><span>Split blocks (image + text) must restack gracefully â€” image first, text below</span></li>
+            <li class="reveal"><span>Maintain a logical reading order when blocks stack: headline â†’ image â†’ body â†’ CTA</span></li>
             <li class="reveal"><span>Side-by-side layouts at desktop should never try to squeeze onto one row at 375px</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vw,0.875rem);">
-          <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;">Restack order ✓</div>
+          <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;">Restack order âœ“</div>
           <div style="display:flex;gap:clamp(0.5rem,1.2vw,1rem);align-items:flex-start;">
             <!-- Desktop layout -->
             <div style="flex:1;">
@@ -588,7 +588,7 @@
                 </div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;padding-top:clamp(1rem,2.5vh,2rem);color:var(--sage);font-size:clamp(0.7rem,1.2vw,1rem);">→</div>
+            <div style="display:flex;align-items:center;padding-top:clamp(1rem,2.5vh,2rem);color:var(--sage);font-size:clamp(0.7rem,1.2vw,1rem);">â†’</div>
             <!-- Mobile layout -->
             <div style="width:clamp(55px,7vw,75px);">
               <div style="font-size:clamp(0.42rem,0.62vw,0.52rem);color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;text-align:center;">Mobile (stacked)</div>
@@ -605,8 +605,8 @@
           <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;padding:clamp(0.4rem,0.9vh,0.65rem);">
             <div style="font-size:clamp(0.42rem,0.62vw,0.52rem);color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;">CTA tap target size</div>
             <div style="display:flex;gap:0.5rem;align-items:center;">
-              <div style="background:rgba(184,80,66,0.1);border:1px dashed rgba(184,80,66,0.4);border-radius:6px;padding:0.15rem 0.6rem;font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--terracotta);height:clamp(20px,3vh,24px);display:flex;align-items:center;">Too small ✗</div>
-              <div style="background:var(--sage-dim);border:1px solid rgba(122,158,135,0.4);border-radius:6px;padding:0.3rem 0.8rem;font-size:clamp(0.5rem,0.78vw,0.64rem);color:var(--sage-dark);height:clamp(36px,5vh,44px);display:flex;align-items:center;font-weight:500;">Tap-friendly ✓</div>
+              <div style="background:rgba(184,80,66,0.1);border:1px dashed rgba(184,80,66,0.4);border-radius:6px;padding:0.15rem 0.6rem;font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--terracotta);height:clamp(20px,3vh,24px);display:flex;align-items:center;">Too small âœ—</div>
+              <div style="background:var(--sage-dim);border:1px solid rgba(122,158,135,0.4);border-radius:6px;padding:0.3rem 0.8rem;font-size:clamp(0.5rem,0.78vw,0.64rem);color:var(--sage-dark);height:clamp(36px,5vh,44px);display:flex;align-items:center;font-weight:500;">Tap-friendly âœ“</div>
               <div style="font-size:clamp(0.42rem,0.62vw,0.52rem);color:var(--text-muted);">Min 44px height</div>
             </div>
           </div>
@@ -615,14 +615,14 @@
     </div>
   </section>
 
-  <!-- SLIDE 7 — DON'T: HERO CROP -->
+  <!-- SLIDE 7 â€” DON'T: HERO CROP -->
   <section class="slide">
     <span class="slide-num">06 / 09</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow red reveal">Don't ⛔️</span>
+            <span class="eyebrow red reveal">Don't â›”ï¸</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Don't Let Heroes<br>Crop Critical Content</h2>
           </div>
@@ -630,14 +630,14 @@
             <li class="reveal"><span>Full-bleed hero images must not crop faces, property features, or text at any breakpoint</span></li>
             <li class="reveal"><span>Check that the focal point (agent's face, property entrance) remains visible on mobile</span></li>
             <li class="reveal"><span>Use CSS <code style="font-size:0.9em;background:var(--bg-warm);padding:0.1em 0.3em;border-radius:3px;">object-position</code> to control the crop point if the image has a key focal area</span></li>
-            <li class="reveal"><span>Never place text directly on a hero without a gradient overlay — ensure legibility always</span></li>
+            <li class="reveal"><span>Never place text directly on a hero without a gradient overlay â€” ensure legibility always</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vw,0.875rem);">
           <div class="compare-grid">
             <div class="cmp-panel bad">
               <div class="cmp-inner" style="padding-bottom:0.3rem;">
-                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Face cropped ✗</div>
+                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Face cropped âœ—</div>
                 <div style="position:relative;border-radius:5px;overflow:hidden;height:clamp(50px,8vh,70px);background:linear-gradient(180deg,var(--stone) 0%, var(--bg-warm) 100%);">
                   <!-- Agent silhouette cropped -->
                   <svg viewBox="0 0 80 60" style="position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:50%;opacity:0.3;">
@@ -646,17 +646,17 @@
                   </svg>
                   <!-- Crop indicator -->
                   <div style="position:absolute;top:0;left:0;right:0;height:3px;background:rgba(184,80,66,0.5);"></div>
-                  <div style="position:absolute;top:3px;left:4px;font-size:clamp(0.38rem,0.55vw,0.45rem);color:rgba(184,80,66,0.8);font-weight:500;">← cropped here on mobile</div>
+                  <div style="position:absolute;top:3px;left:4px;font-size:clamp(0.38rem,0.55vw,0.45rem);color:rgba(184,80,66,0.8);font-weight:500;">â† cropped here on mobile</div>
                 </div>
               </div>
               <div class="cmp-footer" style="background:rgba(184,80,66,0.05);">
-                <span style="color:var(--terracotta);flex-shrink:0;">✗</span>
-                <span>Agent face invisible at 375px — crop point not set</span>
+                <span style="color:var(--terracotta);flex-shrink:0;">âœ—</span>
+                <span>Agent face invisible at 375px â€” crop point not set</span>
               </div>
             </div>
             <div class="cmp-panel good">
               <div class="cmp-inner" style="padding-bottom:0.3rem;">
-                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Face preserved ✓</div>
+                <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Face preserved âœ“</div>
                 <div style="position:relative;border-radius:5px;overflow:hidden;height:clamp(50px,8vh,70px);background:linear-gradient(180deg,var(--bg-warm) 0%, var(--stone) 100%);">
                   <svg viewBox="0 0 80 60" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:50%;opacity:0.45;">
                     <ellipse cx="40" cy="18" rx="14" ry="16" fill="#506656"/>
@@ -667,8 +667,8 @@
                 </div>
               </div>
               <div class="cmp-footer" style="background:var(--sage-dim);">
-                <span style="color:var(--sage);flex-shrink:0;">✓</span>
-                <span>object-position set to top — face always visible</span>
+                <span style="color:var(--sage);flex-shrink:0;">âœ“</span>
+                <span>object-position set to top â€” face always visible</span>
               </div>
             </div>
           </div>
@@ -677,7 +677,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 8 — CHECKLIST -->
+  <!-- SLIDE 8 â€” CHECKLIST -->
   <section class="slide">
     <span class="slide-num">07 / 09</span>
     <div class="slide-content">
@@ -722,7 +722,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 9 — QUOTE -->
+  <!-- SLIDE 9 â€” QUOTE -->
   <section class="slide">
     <span class="slide-num">08 / 09</span>
     <div class="slide-content">
@@ -732,8 +732,8 @@
         <h2 class="h-section reveal">The Mobile Rule</h2>
       </div>
       <div class="quote-block reveal">
-        <div class="quote-text">"Don't approve a site without checking mobile. Period. A site that looks great at 1440px but breaks at 375px is not done — it's half done."</div>
-        <div class="quote-source">LP Design Principles · Responsiveness</div>
+        <div class="quote-text">"Don't approve a site without checking mobile. Period. A site that looks great at 1440px but breaks at 375px is not done â€” it's half done."</div>
+        <div class="quote-source">LP Design Principles Â· Responsiveness</div>
       </div>
       <div class="two-col reveal" style="margin-top:clamp(0.5rem,1.5vh,1.5rem);">
         <div>
@@ -747,8 +747,8 @@
         <div>
           <div style="font-size:var(--small-size);font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:clamp(0.3rem,0.8vh,0.6rem);">Also check:</div>
           <ul class="rule-list">
-            <li><span>Tablet breakpoint (768px) — not just desktop and mobile</span></li>
-            <li><span>All inner pages — not just the homepage</span></li>
+            <li><span>Tablet breakpoint (768px) â€” not just desktop and mobile</span></li>
+            <li><span>All inner pages â€” not just the homepage</span></li>
             <li><span>Actual device if possible, not only DevTools</span></li>
           </ul>
         </div>
@@ -756,7 +756,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 10 — CLOSING -->
+  <!-- SLIDE 10 â€” CLOSING -->
   <section class="slide slide-closing">
     <div class="closing-orb-1" aria-hidden="true"></div>
     <div class="closing-orb-2" aria-hidden="true"></div>
@@ -770,21 +770,21 @@
       </div>
       <div class="quick-ref reveal">
         <div>
-          <div class="qr-label green">Always Do ✅</div>
+          <div class="qr-label green">Always Do âœ…</div>
           <ul class="qr-list">
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>QA every page at mobile (375px), tablet (768px), and desktop</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Navigation collapses into a working hamburger on mobile</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>CTAs are tap-friendly — minimum 44px touch target</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Split blocks restack in a logical reading order on mobile</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>QA every page at mobile (375px), tablet (768px), and desktop</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Navigation collapses into a working hamburger on mobile</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>CTAs are tap-friendly â€” minimum 44px touch target</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Split blocks restack in a logical reading order on mobile</span></li>
           </ul>
         </div>
         <div>
-          <div class="qr-label red">Never Do ⛔️</div>
+          <div class="qr-label red">Never Do â›”ï¸</div>
           <ul class="qr-list">
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Approve a site without checking mobile — ever</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Horizontal scroll on mobile — this is a hard blocker</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Let full-bleed heroes crop faces or key features on mobile</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Leave text over images without a proper overlay treatment</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Approve a site without checking mobile â€” ever</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Horizontal scroll on mobile â€” this is a hard blocker</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Let full-bleed heroes crop faces or key features on mobile</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Leave text over images without a proper overlay treatment</span></li>
           </ul>
         </div>
       </div>
@@ -804,7 +804,6 @@
         this.setupObserver();
         this.setupKeys();
         this.setupTouch();
-        this.setupWheel();
         this.slides[0].classList.add('visible');
         this.updateBar(0);
       }
@@ -843,14 +842,6 @@
         let y0 = 0;
         document.addEventListener('touchstart', e => { y0 = e.touches[0].clientY; }, { passive: true });
         document.addEventListener('touchend',   e => { const dy = y0 - e.changedTouches[0].clientY; if (Math.abs(dy) > 40) this.goto(this.current + (dy > 0 ? 1 : -1)); }, { passive: true });
-      }
-      setupWheel() {
-        document.addEventListener('wheel', e => {
-          if (this.isScrolling) return;
-          this.isScrolling = true;
-          this.goto(this.current + (e.deltaY > 0 ? 1 : -1));
-          setTimeout(() => { this.isScrolling = false; }, 900);
-        }, { passive: true });
       }
     }
     new SlidePresentation();

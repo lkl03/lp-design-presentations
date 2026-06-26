@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Typography — LP Web Builder Training</title>
+  <title>Typography â€” LP Web Builder Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
 
     /* === THEME VARIABLES === */
@@ -27,7 +27,7 @@
       --stone:          #C8BFB6;
       --border:         #DDD8D2;
       --border-light:   #EAE6E0;
-      --font-display:   'Fraunces', serif;
+      --font-display:   'Playfair Display', serif;
       --font-body:      'Work Sans', sans-serif;
       --ease-expo:      cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
@@ -178,7 +178,7 @@
     }
     .rule-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.5rem,1.2vh,1rem); }
     .rule-list li { display: flex; gap: 0.65rem; align-items: flex-start; }
-    .rule-list li::before { content: '—'; color: var(--sage); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
+    .rule-list li::before { content: 'â€”'; color: var(--sage); font-weight: 300; flex-shrink: 0; font-size: var(--body-size); }
     .rule-list li span { font-size: var(--body-size); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
     .divider-labeled { display: flex; align-items: center; gap: 1rem; margin: clamp(0.5rem,1.5vh,1rem) 0; }
     .divider-labeled .line { flex: 1; height: 1px; background: var(--border); }
@@ -324,7 +324,7 @@
     .apply-text { font-size: clamp(0.58rem,0.88vw,0.72rem); font-weight: 300; color: var(--text-secondary); line-height: 1.55; }
     .apply-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.5rem; }
     .apply-checklist li { display: flex; gap: 0.4rem; align-items: flex-start; font-size: clamp(0.55rem,0.82vw,0.68rem); font-weight: 300; color: var(--text-secondary); line-height: 1.4; }
-    .apply-checklist li::before { content: '↗'; color: var(--sage); flex-shrink: 0; font-size: 0.75em; margin-top: 0.1em; }
+    .apply-checklist li::before { content: 'â†—'; color: var(--sage); flex-shrink: 0; font-size: 0.75em; margin-top: 0.1em; }
 
     /* === QUOTE BLOCK === */
     .quote-block {
@@ -407,7 +407,7 @@
     /* === RESOURCE LINKS === */
     .resource-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.4rem,1vh,0.75rem); margin-top: clamp(0.5rem,1.5vh,1rem); }
     .resource-item { display: flex; gap: 0.6rem; align-items: flex-start; }
-    .resource-item::before { content: '↗'; color: var(--sage); flex-shrink: 0; font-size: var(--small-size); margin-top: 0.15em; }
+    .resource-item::before { content: 'â†—'; color: var(--sage); flex-shrink: 0; font-size: var(--small-size); margin-top: 0.15em; }
     .resource-item a, .resource-item span {
       font-size: clamp(0.58rem,0.9vw,0.75rem); font-weight: 300;
       color: var(--text-secondary); line-height: 1.45;
@@ -422,11 +422,11 @@
   <div class="progress-bar" id="progressBar"></div>
   <nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
 
-  <!-- SLIDE 1 — TITLE -->
+  <!-- SLIDE 1 â€” TITLE -->
   <section class="slide slide-title">
     <div class="bg-letter" aria-hidden="true">T</div>
     <div class="slide-content" style="position:relative;z-index:1;">
-      <span class="eyebrow reveal">Luxury Presence · Web Builder Training</span>
+      <span class="eyebrow reveal">Luxury Presence Â· Web Builder Training</span>
       <div class="title-rule reveal"></div>
       <h1 class="h-display reveal">
         Typog&shy;raphy<br><span style="font-weight:400;color:var(--text-secondary);">Best Practices</span>
@@ -447,7 +447,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 2 — WHY TYPOGRAPHY MATTERS -->
+  <!-- SLIDE 2 â€” WHY TYPOGRAPHY MATTERS -->
   <section class="slide">
     <span class="slide-num">01 / 10</span>
     <div class="slide-content">
@@ -466,7 +466,7 @@
         <div class="why-card reveal">
           <div class="why-num">02</div>
           <div class="why-title">Visual Hierarchy</div>
-          <p class="why-text">Heading sizes guide the reader through the page. A broken hierarchy means the reader doesn't know where to look first — and will bounce instead of converting.</p>
+          <p class="why-text">Heading sizes guide the reader through the page. A broken hierarchy means the reader doesn't know where to look first â€” and will bounce instead of converting.</p>
         </div>
         <div class="why-card reveal">
           <div class="why-num">03</div>
@@ -477,14 +477,14 @@
     </div>
   </section>
 
-  <!-- SLIDE 3 — DO: FONT PAIRINGS -->
+  <!-- SLIDE 3 â€” DO: FONT PAIRINGS -->
   <section class="slide">
     <span class="slide-num">02 / 10</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Stick to the Chosen<br>Font Pairing Theme</h2>
           </div>
@@ -492,52 +492,52 @@
             <li class="reveal"><span>Typically one serif and one sans-serif, or two complementary families</span></li>
             <li class="reveal"><span>Apply consistently: headlines in one family, body in the other</span></li>
             <li class="reveal"><span>Never exceed 2 typefaces on a site (3 max in rare cases with design justification)</span></li>
-            <li class="reveal"><span>If the pairing is already chosen by the template or design, honor it — don't swap</span></li>
+            <li class="reveal"><span>If the pairing is already chosen by the template or design, honor it â€” don't swap</span></li>
           </ul>
           <div class="reveal" style="margin-top:clamp(0.5rem,1.2vh,1rem);">
-            <a href="https://coda.io/d/_dw29ymOu-V8/_suAzcDlf" style="font-size:var(--small-size);color:var(--sage-dark);text-decoration:underline;text-underline-offset:2px;" target="_blank">↗ Font Pairings Resource</a>
+            <a href="https://coda.io/d/_dw29ymOu-V8/_suAzcDlf" style="font-size:var(--small-size);color:var(--sage-dark);text-decoration:underline;text-underline-offset:2px;" target="_blank">â†— Font Pairings Resource</a>
           </div>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vw,0.875rem);">
           <div class="pairing-card">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Serif + Sans-Serif ✓</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Serif + Sans-Serif âœ“</div>
             <div class="pairing-title-mock">Elevating the<br>Modern Estate</div>
             <div class="pairing-body-mock">Discover a curated collection of exceptional properties across the most sought-after neighborhoods. Each home is presented with care and expertise.</div>
-            <div class="pairing-label">Fraunces (serif) headlines · Work Sans body</div>
+            <div class="pairing-label">Playfair Display (serif) headlines · Work Sans body</div>
           </div>
           <div class="pairing-card" style="border-color:rgba(184,80,66,0.25);">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Three Typefaces ✗</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Three Typefaces âœ—</div>
             <div style="font-family:'Georgia',serif;font-size:clamp(0.75rem,1.5vw,1.1rem);font-weight:600;color:var(--text-primary);margin-bottom:0.25rem;">Headline in Georgia</div>
             <div style="font-family:'Times New Roman',serif;font-size:clamp(0.65rem,1vw,0.85rem);font-weight:400;color:var(--text-secondary);margin-bottom:0.2rem;line-height:1.5;">Subheading in Times New Roman</div>
-            <div style="font-family:'Arial',sans-serif;font-size:clamp(0.58rem,0.9vw,0.74rem);font-weight:300;color:var(--text-muted);line-height:1.5;">Body in Arial. Three families — no cohesion.</div>
-            <div class="pairing-label" style="color:var(--terracotta);">3 families — visual dissonance, no hierarchy</div>
+            <div style="font-family:'Arial',sans-serif;font-size:clamp(0.58rem,0.9vw,0.74rem);font-weight:300;color:var(--text-muted);line-height:1.5;">Body in Arial. Three families â€” no cohesion.</div>
+            <div class="pairing-label" style="color:var(--terracotta);">3 families â€” visual dissonance, no hierarchy</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 4 — DO: HEADING HIERARCHY -->
+  <!-- SLIDE 4 â€” DO: HEADING HIERARCHY -->
   <section class="slide">
     <span class="slide-num">03 / 10</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Ensure Heading<br>Hierarchy Is Clear</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
             <li class="reveal"><span>H1 should be noticeably larger than H2, H2 larger than H3</span></li>
             <li class="reveal"><span>If you squint and can't tell the difference, the hierarchy is broken</span></li>
-            <li class="reveal"><span>Each level should feel like a distinct size — not just a few pixels apart</span></li>
+            <li class="reveal"><span>Each level should feel like a distinct size â€” not just a few pixels apart</span></li>
             <li class="reveal"><span>Hierarchy communicates structure before the reader processes words</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vw,0.875rem);">
           <div class="mockup-frame">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Clear Hierarchy ✓</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Clear Hierarchy âœ“</div>
             <div class="hierarchy-demo">
               <div class="hier-row">
                 <div class="hier-label">H1</div>
@@ -561,7 +561,7 @@
             </div>
           </div>
           <div class="mockup-frame" style="border-color:rgba(184,80,66,0.25);">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Broken Hierarchy ✗</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Broken Hierarchy âœ—</div>
             <div class="hierarchy-demo">
               <div class="hier-row">
                 <div class="hier-label">H1</div>
@@ -576,61 +576,61 @@
                 <div style="height:clamp(6px,0.95vh,10px);border-radius:3px;background:var(--stone);width:40%;"></div>
               </div>
             </div>
-            <div style="font-size:clamp(0.46rem,0.68vw,0.54rem);color:rgba(184,80,66,0.7);margin-top:0.3rem;">Squinting test fails — all sizes feel the same</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.54rem);color:rgba(184,80,66,0.7);margin-top:0.3rem;">Squinting test fails â€” all sizes feel the same</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 5 — DO: TEXT ALIGNMENT -->
+  <!-- SLIDE 5 â€” DO: TEXT ALIGNMENT -->
   <section class="slide">
     <span class="slide-num">04 / 10</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Use Consistent<br>Text Alignment</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
             <li class="reveal"><span>Don't center one headline and left-align the next in sections with the same layout</span></li>
-            <li class="reveal"><span>Don't mix alignment within a single section — centered headline with left-aligned body looks broken</span></li>
+            <li class="reveal"><span>Don't mix alignment within a single section â€” centered headline with left-aligned body looks broken</span></li>
             <li class="reveal"><span>Pick one and commit: left-aligned text reads more cleanly for body copy</span></li>
-            <li class="reveal"><span>Centered text is fine for hero sections or isolated callouts — not running copy</span></li>
+            <li class="reveal"><span>Centered text is fine for hero sections or isolated callouts â€” not running copy</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vw,0.875rem);">
           <div class="alignment-demo">
             <div class="align-row bad">
-              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Mixed alignment ✗</div>
+              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Mixed alignment âœ—</div>
               <div class="align-headline" style="text-align:center;">Headline Centered</div>
               <div style="display:flex;flex-direction:column;gap:0.2rem;align-items:flex-start;margin-top:0.25rem;">
                 <div class="align-body-bar" style="width:100%;"></div>
                 <div class="align-body-bar" style="width:82%;"></div>
                 <div class="align-body-bar" style="width:91%;"></div>
               </div>
-              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:rgba(184,80,66,0.65);margin-top:0.25rem;">Headline centers, body left-aligns — tension within one block</div>
+              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:rgba(184,80,66,0.65);margin-top:0.25rem;">Headline centers, body left-aligns â€” tension within one block</div>
             </div>
             <div class="align-row good">
-              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Consistent alignment ✓</div>
+              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Consistent alignment âœ“</div>
               <div class="align-headline">Headline Left-Aligned</div>
               <div style="display:flex;flex-direction:column;gap:0.2rem;align-items:flex-start;margin-top:0.25rem;">
                 <div class="align-body-bar" style="width:100%;"></div>
                 <div class="align-body-bar" style="width:82%;"></div>
                 <div class="align-body-bar" style="width:91%;"></div>
               </div>
-              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--sage-dark);margin-top:0.25rem;">Headline and body share the same axis — intentional and clean</div>
+              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--sage-dark);margin-top:0.25rem;">Headline and body share the same axis â€” intentional and clean</div>
             </div>
             <div class="align-row good">
-              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Hero centered ✓</div>
+              <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;">Hero centered âœ“</div>
               <div class="align-headline" style="text-align:center;">Hero Headline</div>
               <div style="display:flex;flex-direction:column;gap:0.2rem;align-items:center;margin-top:0.25rem;">
                 <div class="align-body-bar" style="width:75%;"></div>
                 <div class="align-body-bar" style="width:60%;"></div>
               </div>
-              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--sage-dark);margin-top:0.25rem;">Both headline and body centered — isolated, intentional, hero only</div>
+              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--sage-dark);margin-top:0.25rem;">Both headline and body centered â€” isolated, intentional, hero only</div>
             </div>
           </div>
         </div>
@@ -638,70 +638,70 @@
     </div>
   </section>
 
-  <!-- SLIDE 6 — DO: BODY TEXT SIZE -->
+  <!-- SLIDE 6 â€” DO: BODY TEXT SIZE -->
   <section class="slide">
     <span class="slide-num">05 / 10</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow reveal">Do ✅</span>
+            <span class="eyebrow reveal">Do âœ…</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Minimum 14px<br>for Body Copy</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
-            <li class="reveal"><span>14px is the minimum for body text on desktop — not a suggestion, a floor</span></li>
+            <li class="reveal"><span>14px is the minimum for body text on desktop â€” not a suggestion, a floor</span></li>
             <li class="reveal"><span>Below 14px the site may look "tight" visually but becomes inaccessible in practice</span></li>
-            <li class="reveal"><span>Small text is especially problematic on mobile — always QA at mobile scale</span></li>
-            <li class="reveal"><span>Line height of 1.5–1.7 at body size keeps paragraphs readable and airy</span></li>
+            <li class="reveal"><span>Small text is especially problematic on mobile â€” always QA at mobile scale</span></li>
+            <li class="reveal"><span>Line height of 1.5â€“1.7 at body size keeps paragraphs readable and airy</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.625rem,1.5vw,1.25rem);">
           <div class="mockup-frame" style="border-color:rgba(122,158,135,0.3);">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">14px+ ✓</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">14px+ âœ“</div>
             <div style="font-size:clamp(0.7rem,1.1vw,0.88rem);font-weight:300;color:var(--text-secondary);line-height:1.65;">Discover a curated collection of exceptional properties across the most sought-after neighborhoods. Each home is presented with care.</div>
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);color:var(--sage);margin-top:0.2rem;">Comfortable — readable at a glance</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);color:var(--sage);margin-top:0.2rem;">Comfortable â€” readable at a glance</div>
           </div>
           <div class="mockup-frame" style="border-color:rgba(184,80,66,0.3);">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">Below 14px ✗</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">Below 14px âœ—</div>
             <div style="font-size:clamp(0.52rem,0.78vw,0.64rem);font-weight:300;color:var(--text-secondary);line-height:1.5;">Discover a curated collection of exceptional properties across the most sought-after neighborhoods. Each home is presented with care and expertise.</div>
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);color:rgba(184,80,66,0.7);margin-top:0.2rem;">Too small — strains the eye, signals amateur craft</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);color:rgba(184,80,66,0.7);margin-top:0.2rem;">Too small â€” strains the eye, signals amateur craft</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 7 — DON'T: ALL CAPS BODY -->
+  <!-- SLIDE 7 â€” DON'T: ALL CAPS BODY -->
   <section class="slide">
     <span class="slide-num">06 / 10</span>
     <div class="slide-content">
       <div class="two-col">
         <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,1.1vh,0.875rem);">
           <div class="slide-header" style="margin-bottom:0;">
-            <span class="eyebrow red reveal">Don't ⛔️</span>
+            <span class="eyebrow red reveal">Don't â›”ï¸</span>
             <div class="title-rule reveal"></div>
             <h2 class="h-section reveal">Don't Set Body Copy<br>in All Caps</h2>
           </div>
           <ul class="rule-list stagger" style="margin-top:clamp(0.25rem,0.7vh,0.5rem);">
             <li class="reveal"><span>All caps drastically reduces readability in running text</span></li>
-            <li class="reveal"><span>All caps is for short labels, titles, nav items, or button text — never paragraphs</span></li>
+            <li class="reveal"><span>All caps is for short labels, titles, nav items, or button text â€” never paragraphs</span></li>
             <li class="reveal"><span>If in doubt: would you read a full article in all caps? No. Don't ask your users to either</span></li>
-            <li class="reveal"><span>Mixed casing is not a style choice here — it's a readability requirement</span></li>
+            <li class="reveal"><span>Mixed casing is not a style choice here â€” it's a readability requirement</span></li>
           </ul>
         </div>
         <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vw,0.875rem);">
           <div class="mockup-frame" style="border-color:rgba(184,80,66,0.3);">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">All Caps Body ✗</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--terracotta);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">All Caps Body âœ—</div>
             <div class="specimen-caps-bad">DISCOVER A CURATED COLLECTION OF EXCEPTIONAL PROPERTIES ACROSS THE MOST SOUGHT-AFTER NEIGHBORHOODS. EACH HOME IS PRESENTED WITH CARE AND EXPERTISE.</div>
-            <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:rgba(184,80,66,0.65);">Eye-straining, SCREAMING — loses all refinement</div>
+            <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:rgba(184,80,66,0.65);">Eye-straining, SCREAMING â€” loses all refinement</div>
           </div>
           <div class="mockup-frame" style="border-color:rgba(122,158,135,0.3);">
-            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Normal Case ✓ / Caps for Labels Only ✓</div>
+            <div style="font-size:clamp(0.46rem,0.68vw,0.56rem);font-weight:500;color:var(--sage);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;">Normal Case âœ“ / Caps for Labels Only âœ“</div>
             <div class="specimen-normal">Discover a curated collection of exceptional properties across the most sought-after neighborhoods. Each home is presented with care and expertise.</div>
             <div style="display:flex;gap:0.5rem;margin-top:0.3rem;align-items:center;">
               <div style="background:var(--sage);border-radius:100px;padding:0.2em 0.7em;font-size:clamp(0.42rem,0.65vw,0.54rem);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:white;">View Listings</div>
-              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--sage-dark);">← button label: caps are fine here</div>
+              <div style="font-size:clamp(0.44rem,0.65vw,0.54rem);color:var(--sage-dark);">â† button label: caps are fine here</div>
             </div>
           </div>
         </div>
@@ -709,7 +709,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 8 — QUOTE / PRINCIPLE -->
+  <!-- SLIDE 8 â€” QUOTE / PRINCIPLE -->
   <section class="slide">
     <span class="slide-num">07 / 10</span>
     <div class="slide-content">
@@ -719,8 +719,8 @@
         <h2 class="h-section reveal">The Squint Test</h2>
       </div>
       <div class="quote-block reveal">
-        <div class="quote-text">"Squint at any page. You should still be able to read the hierarchy — which is the headline, which is the subhead, which is the body. If everything blurs into the same visual weight, the typography is broken."</div>
-        <div class="quote-source">LP Design Principles · Typography</div>
+        <div class="quote-text">"Squint at any page. You should still be able to read the hierarchy â€” which is the headline, which is the subhead, which is the body. If everything blurs into the same visual weight, the typography is broken."</div>
+        <div class="quote-source">LP Design Principles Â· Typography</div>
       </div>
       <div class="two-col reveal" style="margin-top:clamp(0.5rem,1.5vh,1.5rem);">
         <div>
@@ -743,7 +743,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 9 — APPLY / CHECKLIST -->
+  <!-- SLIDE 9 â€” APPLY / CHECKLIST -->
   <section class="slide">
     <span class="slide-num">08 / 10</span>
     <div class="slide-content">
@@ -757,9 +757,9 @@
         <div class="apply-card reveal">
           <div class="apply-step">01</div>
           <div class="apply-title">Font Pairing</div>
-          <p class="apply-text">Confirm only the approved 1–2 font families are in use. Check headings, body, nav, and CTAs.</p>
+          <p class="apply-text">Confirm only the approved 1â€“2 font families are in use. Check headings, body, nav, and CTAs.</p>
           <ul class="apply-checklist">
-            <li>Open inspector → check all font-family values</li>
+            <li>Open inspector â†’ check all font-family values</li>
             <li>Headings use one family, body another</li>
             <li>No extra families snuck in via inline styles</li>
           </ul>
@@ -771,7 +771,7 @@
           <ul class="apply-checklist">
             <li>H1 clearly larger than H2</li>
             <li>H2 clearly larger than H3</li>
-            <li>Body ≥ 14px on desktop</li>
+            <li>Body â‰¥ 14px on desktop</li>
           </ul>
         </div>
         <div class="apply-card reveal">
@@ -788,7 +788,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 10 — RESOURCES -->
+  <!-- SLIDE 10 â€” RESOURCES -->
   <section class="slide">
     <span class="slide-num">09 / 10</span>
     <div class="slide-content">
@@ -824,7 +824,7 @@
     </div>
   </section>
 
-  <!-- SLIDE 11 — CLOSING -->
+  <!-- SLIDE 11 â€” CLOSING -->
   <section class="slide slide-closing">
     <div class="closing-orb-1" aria-hidden="true"></div>
     <div class="closing-orb-2" aria-hidden="true"></div>
@@ -838,22 +838,22 @@
       </div>
       <div class="quick-ref reveal">
         <div>
-          <div class="qr-label green">Always Do ✅</div>
+          <div class="qr-label green">Always Do âœ…</div>
           <ul class="qr-list">
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Stick to 1–2 font families, applied consistently</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>H1 noticeably larger than H2, H2 than H3</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Consistent text alignment within every section</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Body text minimum 14px on desktop</span></li>
-            <li><span class="qr-icon" style="color:var(--sage-light);">✓</span><span>Run the squint test before handoff</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Stick to 1â€“2 font families, applied consistently</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>H1 noticeably larger than H2, H2 than H3</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Consistent text alignment within every section</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Body text minimum 14px on desktop</span></li>
+            <li><span class="qr-icon" style="color:var(--sage-light);">âœ“</span><span>Run the squint test before handoff</span></li>
           </ul>
         </div>
         <div>
-          <div class="qr-label red">Never Do ⛔️</div>
+          <div class="qr-label red">Never Do â›”ï¸</div>
           <ul class="qr-list">
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>More than 2 typefaces (3 absolute max with justification)</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Body copy in all caps — ever</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Mix text alignment within a single section block</span></li>
-            <li><span class="qr-icon" style="color:#D4897E;">✗</span><span>Submit a site where the hierarchy squint test fails</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>More than 2 typefaces (3 absolute max with justification)</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Body copy in all caps â€” ever</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Mix text alignment within a single section block</span></li>
+            <li><span class="qr-icon" style="color:#D4897E;">âœ—</span><span>Submit a site where the hierarchy squint test fails</span></li>
           </ul>
         </div>
       </div>
@@ -873,7 +873,6 @@
         this.setupObserver();
         this.setupKeys();
         this.setupTouch();
-        this.setupWheel();
         this.slides[0].classList.add('visible');
         this.updateBar(0);
       }
@@ -922,14 +921,6 @@
         document.addEventListener('touchend',   e => {
           const dy = y0 - e.changedTouches[0].clientY;
           if (Math.abs(dy) > 40) this.goto(this.current + (dy > 0 ? 1 : -1));
-        }, { passive: true });
-      }
-      setupWheel() {
-        document.addEventListener('wheel', e => {
-          if (this.isScrolling) return;
-          this.isScrolling = true;
-          this.goto(this.current + (e.deltaY > 0 ? 1 : -1));
-          setTimeout(() => { this.isScrolling = false; }, 900);
         }, { passive: true });
       }
     }
